@@ -19,7 +19,7 @@ const packages = [
   },
   {
     name: 'Executive Memorial',
-    price: 'R 65,000',
+    price: 'KSh 650,000',
     desc: 'Our signature package for a truly distinguished farewell.',
     features: ['Executive casket collection', 'Premium hearse fleet (3 vehicles)', 'Full-service event coordination', 'Luxury floral design', 'Premium tent & seating (150 guests)', 'Custom tribute program & video', 'Live music coordination', 'Professional photography & videography', 'Catering for 150 guests', 'Dedicated family liaison'],
     featured: true,
