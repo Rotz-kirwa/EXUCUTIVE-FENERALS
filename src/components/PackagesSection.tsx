@@ -5,7 +5,7 @@ import { Check, Star } from 'lucide-react';
 const packages = [
   {
     name: 'Essential Farewell',
-    price: 'R 15,000',
+    price: 'KSh 150,000',
     desc: 'A dignified, respectful service covering all essentials.',
     features: ['Basic casket selection', 'Standard hearse transport', 'Chapel ceremony coordination', 'Floral tribute arrangement', 'Burial coordination', 'Documentation handling'],
     featured: false,
