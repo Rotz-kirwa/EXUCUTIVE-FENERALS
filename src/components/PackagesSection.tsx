@@ -12,7 +12,7 @@ const packages = [
   },
   {
     name: 'Classic Tribute',
-    price: 'R 35,000',
+    price: 'KSh 350,000',
     desc: 'A comprehensive service with enhanced touches of elegance.',
     features: ['Premium casket selection', 'Luxury hearse transport', 'Full ceremony coordination', 'Bespoke floral arrangements', 'Tent & seating for 80 guests', 'Memorial tribute program', 'Professional photography', 'Catering coordination'],
     featured: false,
