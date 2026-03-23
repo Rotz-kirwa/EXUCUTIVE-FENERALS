@@ -2,6 +2,19 @@ import { useState } from 'react';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 import SectionHeading from './SectionHeading';
 import { Phone, Mail, MapPin, Clock, MessageCircle, Send } from 'lucide-react';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+
+const services = [
+  'Funeral Planning & Coordination',
+  'Hearse Transportation',
+  'Casket & Coffin Selection',
+  'Floral Arrangements',
+  'Tent & Chair Setup',
+  'Memorial Service',
+  'Burial Coordination',
+  'Upcountry & International Repatriation',
+  'Full Package Inquiry',
+];
 
 const ContactSection = () => {
   const { ref, isVisible } = useScrollReveal();
@@ -24,12 +37,12 @@ const ContactSection = () => {
         {/* Emergency Banner */}
         <div className={`mt-12 max-w-3xl mx-auto p-6 border border-primary/30 bg-primary/5 text-center transition-all duration-700 ${isVisible ? 'opacity-100' : 'opacity-0'}`} ref={ref}>
           <div className="font-serif text-lg text-gold mb-2">Urgent Funeral Assistance?</div>
-          <p className="font-sans text-sm text-muted-foreground mb-4">Our emergency team is available around the clock for immediate support.</p>
+          <p className="font-sans text-sm text-muted-foreground mb-4">Our emergency team is available around the clock for immediate support in Nairobi and across Kenya.</p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-            <a href="tel:+27800000000" className="flex items-center gap-2 px-6 py-3 gold-gradient text-primary-foreground font-sans text-xs tracking-[0.15em] uppercase active:scale-[0.97] transition-transform">
+            <a href="tel:07155855360" className="flex items-center gap-2 px-6 py-3 gold-gradient text-primary-foreground font-sans text-xs tracking-[0.15em] uppercase active:scale-[0.97] transition-transform">
               <Phone size={14} /> Call Now
             </a>
-            <a href="https://wa.me/27800000000" className="flex items-center gap-2 px-6 py-3 border border-primary/30 text-gold font-sans text-xs tracking-[0.15em] uppercase hover:bg-primary/10 transition-all active:scale-[0.97]">
+            <a href="https://wa.me/254715250625" className="flex items-center gap-2 px-6 py-3 border border-primary/30 text-gold font-sans text-xs tracking-[0.15em] uppercase hover:bg-primary/10 transition-all active:scale-[0.97]">
               <MessageCircle size={14} /> WhatsApp
             </a>
           </div>
@@ -46,7 +59,7 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <label className="font-sans text-xs tracking-[0.1em] uppercase text-muted-foreground mb-2 block">Phone Number</label>
-                  <input type="tel" value={form.phone} onChange={e => setForm({ ...form, phone: e.target.value })} className="w-full bg-secondary/30 border border-border px-4 py-3 font-sans text-sm text-foreground placeholder:text-muted-foreground/50 focus:border-primary/50 focus:outline-none transition-colors" placeholder="+27 000 000 0000" />
+                  <input type="tel" value={form.phone} onChange={e => setForm({ ...form, phone: e.target.value })} className="w-full bg-secondary/30 border border-border px-4 py-3 font-sans text-sm text-foreground placeholder:text-muted-foreground/50 focus:border-primary/50 focus:outline-none transition-colors" placeholder="07155855360" />
                 </div>
               </div>
               <div>
@@ -55,18 +68,18 @@ const ContactSection = () => {
               </div>
               <div>
                 <label className="font-sans text-xs tracking-[0.1em] uppercase text-muted-foreground mb-2 block">Service Needed</label>
-                <select value={form.service} onChange={e => setForm({ ...form, service: e.target.value })} className="w-full bg-secondary/30 border border-border px-4 py-3 font-sans text-sm text-foreground focus:border-primary/50 focus:outline-none transition-colors appearance-none">
-                  <option value="">Select a service</option>
-                  <option>Funeral Planning & Coordination</option>
-                  <option>Hearse Transportation</option>
-                  <option>Casket & Coffin Selection</option>
-                  <option>Floral Arrangements</option>
-                  <option>Tent & Chair Setup</option>
-                  <option>Memorial Service</option>
-                  <option>Burial Coordination</option>
-                  <option>Repatriation</option>
-                  <option>Full Package Inquiry</option>
-                </select>
+                <Select value={form.service} onValueChange={service => setForm({ ...form, service })}>
+                  <SelectTrigger className="h-auto w-full rounded-none bg-secondary/30 border-border px-4 py-3 font-sans text-sm text-foreground focus:border-primary/50 focus:ring-0 focus:ring-offset-0">
+                    <SelectValue placeholder="Select a service" />
+                  </SelectTrigger>
+                  <SelectContent className="border-border bg-secondary text-foreground">
+                    {services.map(service => (
+                      <SelectItem key={service} value={service} className="font-sans text-sm focus:bg-primary/15 focus:text-foreground">
+                        {service}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
               </div>
               <div>
                 <label className="font-sans text-xs tracking-[0.1em] uppercase text-muted-foreground mb-2 block">Message</label>
@@ -81,9 +94,9 @@ const ContactSection = () => {
           {/* Info */}
           <div className="lg:col-span-2 space-y-8">
             {[
-              { icon: MapPin, title: 'Our Office', lines: ['123 Dignity Avenue', 'Sandton, Johannesburg', 'South Africa'] },
-              { icon: Phone, title: 'Phone', lines: ['+27 (0) 800 000 000', '+27 (0) 11 000 0000'] },
-              { icon: Mail, title: 'Email', lines: ['info@executivefunerals.co.za', 'support@executivefunerals.co.za'] },
+              { icon: MapPin, title: 'Our Office', lines: ['145 Waiyaki Way', 'Westlands, Nairobi', 'Kenya'] },
+              { icon: Phone, title: 'Phone', lines: ['07155855360', '0715250625'] },
+              { icon: Mail, title: 'Email', lines: ['info@executivefunerals.co.ke', 'support@executivefunerals.co.ke'] },
               { icon: Clock, title: 'Hours', lines: ['24/7 Emergency Support', 'Office: Mon–Sat, 8AM–6PM'] },
             ].map(({ icon: Icon, title, lines }) => (
               <div key={title} className="flex gap-4">

@@ -16,7 +16,7 @@ const FooterSection = () => (
             </div>
           </div>
           <p className="font-sans text-sm text-muted-foreground leading-relaxed mt-4">
-            Honoring lives with dignity, compassion, and excellence. Premium funeral services for families who deserve the best.
+            Honoring lives with dignity, compassion, and excellence for families in Nairobi and across Kenya.
           </p>
         </div>
 
@@ -49,8 +49,9 @@ const FooterSection = () => (
           <h4 className="font-serif text-lg text-foreground mb-4">Support</h4>
           <ul className="space-y-2 font-sans text-sm text-muted-foreground">
             <li>24/7 Emergency Line</li>
-            <li>+27 (0) 800 000 000</li>
-            <li>info@executivefunerals.co.za</li>
+            <li>07155855360</li>
+            <li>0715250625</li>
+            <li>info@executivefunerals.co.ke</li>
             <li className="pt-2">
               <a href="#contact" className="text-gold hover:text-foreground transition-colors">Request Assistance →</a>
             </li>

@@ -4,10 +4,10 @@ import SectionHeading from './SectionHeading';
 import { Star, ChevronLeft, ChevronRight, Quote } from 'lucide-react';
 
 const testimonials = [
-  { name: 'Margaret Ndlovu', role: 'Johannesburg', text: 'Executive Funerals handled my mother\'s service with such grace and professionalism. Every detail was perfect, from the floral arrangements to the coordination. They turned the hardest day of our lives into a beautiful celebration of her legacy.', rating: 5 },
-  { name: 'David Mokoena', role: 'Pretoria', text: 'We were overwhelmed with grief, but the team at Executive Funerals took care of everything. Their compassion, attention to detail, and premium service made all the difference. I cannot recommend them highly enough.', rating: 5 },
-  { name: 'Sarah van der Merwe', role: 'Cape Town', text: 'The level of professionalism was extraordinary. From the luxury hearse to the beautifully arranged memorial, everything exceeded our expectations. They truly honored my father\'s memory with dignity.', rating: 5 },
-  { name: 'Thabo Khumalo', role: 'Durban', text: 'In our most difficult time, Executive Funerals was a pillar of strength. Their 24/7 availability and the personal attention from the coordination team was remarkable. A truly premium service.', rating: 5 },
+  { name: 'Grace Wanjiku', role: 'Nairobi', text: 'Executive Funerals handled my mother\'s service with such grace and professionalism. Every detail was perfect, from the floral arrangements to the coordination. They turned the hardest day of our lives into a beautiful celebration of her legacy.', rating: 5 },
+  { name: 'Peter Otieno', role: 'Kisumu', text: 'We were overwhelmed with grief, but the team at Executive Funerals took care of everything. Their compassion, attention to detail, and premium service made all the difference. I cannot recommend them highly enough.', rating: 5 },
+  { name: 'Mercy Mutua', role: 'Mombasa', text: 'The level of professionalism was extraordinary. From the luxury hearse to the beautifully arranged memorial, everything exceeded our expectations. They truly honored my father\'s memory with dignity.', rating: 5 },
+  { name: 'Samuel Kiptoo', role: 'Eldoret', text: 'In our most difficult time, Executive Funerals was a pillar of strength. Their 24/7 availability and the personal attention from the coordination team was remarkable. A truly premium service.', rating: 5 },
 ];
 
 const TestimonialsSection = () => {

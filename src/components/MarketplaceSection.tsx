@@ -12,14 +12,14 @@ import hearseImg from '@/assets/service-hearse.jpg';
 const categories = ['All', 'Caskets', 'Florals', 'Tents & Setup', 'Memorial', 'Transport'];
 
 const products = [
-  { name: 'Heritage Mahogany Casket', cat: 'Caskets', price: 'R 18,500', img: casketImg, desc: 'Handcrafted mahogany casket with satin interior lining and gold-plated handles.' },
-  { name: 'Premium Ebony Casket', cat: 'Caskets', price: 'R 24,000', img: casketImg, desc: 'Luxurious ebony casket with velvet interior and chrome fittings.' },
-  { name: 'White Rose Memorial Wreath', cat: 'Florals', price: 'R 2,800', img: floralImg, desc: 'Elegant white rose and lily wreath arrangement for memorial tributes.' },
-  { name: 'Cascade Lily Tribute', cat: 'Florals', price: 'R 3,500', img: floralImg, desc: 'Cascading lily and greenery arrangement for casket display.' },
-  { name: 'Premium Marquee Setup', cat: 'Tents & Setup', price: 'R 8,500', img: tentImg, desc: 'Complete marquee tent with draping, chairs, and setup for up to 100 guests.' },
-  { name: 'Deluxe Chair Package (50)', cat: 'Tents & Setup', price: 'R 3,200', img: tentImg, desc: 'Premium padded chairs with covers and sashes for 50 guests.' },
-  { name: 'Memorial Candle Set', cat: 'Memorial', price: 'R 950', img: memorialImg, desc: 'Set of 12 premium pillar candles with glass holders for memorial displays.' },
-  { name: 'Gold Tribute Frame', cat: 'Memorial', price: 'R 1,200', img: memorialImg, desc: 'Ornate gold-finish tribute frame for displaying portraits at ceremonies.' },
+  { name: 'Heritage Mahogany Casket', cat: 'Caskets', price: 'KSh 135,000', img: casketImg, desc: 'Handcrafted mahogany casket with satin interior lining and gold-plated handles.' },
+  { name: 'Premium Ebony Casket', cat: 'Caskets', price: 'KSh 185,000', img: casketImg, desc: 'Luxurious ebony casket with velvet interior and chrome fittings.' },
+  { name: 'White Rose Memorial Wreath', cat: 'Florals', price: 'KSh 18,500', img: floralImg, desc: 'Elegant white rose and lily wreath arrangement for memorial tributes.' },
+  { name: 'Cascade Lily Tribute', cat: 'Florals', price: 'KSh 24,000', img: floralImg, desc: 'Cascading lily and greenery arrangement for casket display.' },
+  { name: 'Premium Canopy Setup', cat: 'Tents & Setup', price: 'KSh 65,000', img: tentImg, desc: 'Complete canopy tent with draping, chairs, and setup for up to 100 guests.' },
+  { name: 'Deluxe Chair Package (50)', cat: 'Tents & Setup', price: 'KSh 22,000', img: tentImg, desc: 'Premium padded chairs with covers and sashes for 50 guests.' },
+  { name: 'Memorial Candle Set', cat: 'Memorial', price: 'KSh 8,500', img: memorialImg, desc: 'Set of 12 premium pillar candles with glass holders for memorial displays.' },
+  { name: 'Gold Tribute Frame', cat: 'Memorial', price: 'KSh 12,000', img: memorialImg, desc: 'Ornate gold-finish tribute frame for displaying portraits at ceremonies.' },
   { name: 'Premium Hearse Booking', cat: 'Transport', price: 'Request Quote', img: hearseImg, desc: 'Luxury hearse with professional chauffeur for dignified transportation.' },
 ];
 

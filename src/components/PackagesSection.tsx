@@ -7,7 +7,7 @@ const packages = [
     name: 'Essential Farewell',
     price: 'KSh 150,000',
     desc: 'A dignified, respectful service covering all essentials.',
-    features: ['Basic casket selection', 'Standard hearse transport', 'Chapel ceremony coordination', 'Floral tribute arrangement', 'Burial coordination', 'Documentation handling'],
+    features: ['Basic casket selection', 'Standard hearse transport', 'Church or home service coordination', 'Floral tribute arrangement', 'Burial coordination', 'Documentation handling'],
     featured: false,
   },
   {
@@ -28,7 +28,7 @@ const packages = [
     name: 'Prestige Legacy',
     price: 'Custom',
     desc: 'Bespoke, unlimited, world-class funeral experience.',
-    features: ['Bespoke casket of choice', 'Unlimited premium fleet', 'Personal event director', 'Unlimited floral design', 'Any venue, any scale', 'Full multimedia production', 'International repatriation support', 'Legacy memorial website', '30-day family aftercare', 'Concierge-level service'],
+    features: ['Bespoke casket of choice', 'Unlimited premium fleet', 'Personal event director', 'Unlimited floral design', 'Any venue, any scale', 'Full multimedia production', 'Regional and international repatriation support', 'Legacy memorial website', '30-day family aftercare', 'Concierge-level service'],
     featured: false,
   },
 ];

@@ -34,10 +34,10 @@ const AboutSection = () => {
             </h2>
             <div className="space-y-5 text-muted-foreground font-sans text-base leading-relaxed">
               <p>
-                For over a decade, Executive Funerals has been the trusted name in premium funeral services. We understand that losing a loved one is one of life's most profound moments, and we are committed to ensuring every farewell is handled with the utmost respect, grace, and professionalism.
+                For over a decade, Executive Funerals has supported families in Nairobi and across Kenya with dignified, premium funeral services. We understand that losing a loved one is one of life's most profound moments, and we are committed to ensuring every farewell is handled with the utmost respect, grace, and professionalism.
               </p>
               <p>
-                From meticulous planning to flawless execution, our dedicated team orchestrates every detail so families can focus on what matters most — remembering, honoring, and celebrating a life well lived.
+                From city memorials in Nairobi to upcountry burial arrangements, our dedicated team orchestrates every detail so families can focus on what matters most — remembering, honoring, and celebrating a life well lived.
               </p>
             </div>
 

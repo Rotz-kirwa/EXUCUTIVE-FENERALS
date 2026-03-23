@@ -1,3 +1,3 @@
-# Welcome to your Lovable project
+# Executive Funerals
 
-TODO: Document your project here
+Marketing website for Executive Funerals built with Vite, React, TypeScript, and Tailwind CSS.

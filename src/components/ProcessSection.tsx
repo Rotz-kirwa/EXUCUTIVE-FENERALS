@@ -3,9 +3,9 @@ import SectionHeading from './SectionHeading';
 import { Phone, ClipboardList, Settings, Sparkles, HeartHandshake } from 'lucide-react';
 
 const steps = [
-  { icon: Phone, title: 'Contact Us', desc: 'Reach out via phone, WhatsApp, or our website — available 24/7 for immediate support.' },
+  { icon: Phone, title: 'Contact Us', desc: 'Reach out via phone, WhatsApp, or our website — available 24/7 for immediate support in Nairobi and across Kenya.' },
   { icon: ClipboardList, title: 'Consultation & Planning', desc: 'Meet with our coordinators to discuss your wishes, preferences, and create a tailored plan.' },
-  { icon: Settings, title: 'Service Coordination', desc: 'We handle every logistic — venue, transport, flowers, equipment, and all arrangements.' },
+  { icon: Settings, title: 'Service Coordination', desc: 'We handle every logistic — venue, transport, flowers, equipment, permits, and all arrangements.' },
   { icon: Sparkles, title: 'Ceremony Execution', desc: 'A dignified, beautifully orchestrated farewell service that honors your loved one\u2019s life.' },
   { icon: HeartHandshake, title: 'Ongoing Support', desc: 'Continued family support, grief resources, and assistance in the days and weeks following.' },
 ];
