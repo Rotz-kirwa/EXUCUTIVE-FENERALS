@@ -1,8 +1,7 @@
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 import SectionHeading from './SectionHeading';
-import { ArrowRight, Calendar, Car, Package, Flower2, Tent, HeartHandshake, Church, Shovel, Plane, FileText } from 'lucide-react';
+import { ArrowRight, Car, Package, Flower2, Tent, HeartHandshake, Church, Shovel, Plane, FileText } from 'lucide-react';
 
-import planningImg from '@/assets/service-planning.jpg';
 import hearseImg from '@/assets/service-hearse.jpg';
 import casketImg from '@/assets/service-casket.jpg';
 import floralImg from '@/assets/service-floral.jpg';
@@ -11,7 +10,6 @@ import memorialImg from '@/assets/service-memorial.jpg';
 import burialImg from '@/assets/service-burial.jpg';
 
 const services = [
-  { icon: Calendar, title: 'Funeral Planning & Coordination', desc: 'Complete end-to-end funeral planning with dedicated coordinators who manage every detail with precision and care.', img: planningImg },
   { icon: Car, title: 'Hearse Transportation', desc: 'Premium fleet of luxury hearses providing dignified transportation with professional chauffeurs.', img: hearseImg },
   { icon: Package, title: 'Casket & Coffin Selection', desc: 'Curated collection of premium caskets and coffins in various styles, materials, and finishes.', img: casketImg },
   { icon: Flower2, title: 'Floral Arrangements', desc: 'Bespoke funeral floral tributes designed to honor and celebrate the life of your loved one.', img: floralImg },
@@ -20,7 +18,7 @@ const services = [
   { icon: Church, title: 'Memorial Service Setup', desc: 'Beautiful memorial settings with candles, tributes, photo displays, and dignified ambiance.', img: memorialImg },
   { icon: Shovel, title: 'Burial Process Coordination', desc: 'Seamless coordination of burial proceedings with cemetery liaisons and all required logistics.', img: burialImg },
   { icon: Plane, title: 'Repatriation Assistance', desc: 'International and domestic transportation of remains with full documentation and compliance support.', img: hearseImg },
-  { icon: FileText, title: 'Custom Tribute Programs', desc: 'Professionally designed tribute programs, memorial booklets, and ceremony stationery.', img: planningImg },
+  { icon: FileText, title: 'Custom Tribute Programs', desc: 'Professionally designed tribute programs, memorial booklets, and ceremony stationery.', img: 'https://i.pinimg.com/1200x/85/da/ea/85daea413429a0756c4b73c9123c4cbf.jpg' },
 ];
 
 const ServicesSection = () => {
