@@ -8,6 +8,7 @@ import floralImg from '@/assets/service-floral.jpg';
 import tentImg from '@/assets/service-tent.jpg';
 import memorialImg from '@/assets/service-memorial.jpg';
 import burialImg from '@/assets/service-burial.jpg';
+import tributeProgramsImg from '@/assets/service-tribute-programs.jpg';
 
 const services = [
   { icon: Car, title: 'Hearse Transportation', desc: 'Premium fleet of luxury hearses providing dignified transportation with professional chauffeurs.', img: hearseImg },
@@ -18,7 +19,7 @@ const services = [
   { icon: Church, title: 'Memorial Service Setup', desc: 'Beautiful memorial settings with candles, tributes, photo displays, and dignified ambiance.', img: memorialImg },
   { icon: Shovel, title: 'Burial Process Coordination', desc: 'Seamless coordination of burial proceedings with cemetery liaisons and all required logistics.', img: burialImg },
   { icon: Plane, title: 'Repatriation Assistance', desc: 'International and domestic transportation of remains with full documentation and compliance support.', img: hearseImg },
-  { icon: FileText, title: 'Custom Tribute Programs', desc: 'Professionally designed tribute programs, memorial booklets, and ceremony stationery.', img: 'https://i.pinimg.com/1200x/85/da/ea/85daea413429a0756c4b73c9123c4cbf.jpg' },
+  { icon: FileText, title: 'Custom Tribute Programs', desc: 'Professionally designed tribute programs, memorial booklets, and ceremony stationery.', img: tributeProgramsImg },
 ];
 
 const ServicesSection = () => {
