@@ -39,11 +39,11 @@ const ContactSection = () => {
           <div className="font-serif text-lg text-gold mb-2">Urgent Funeral Assistance?</div>
           <p className="font-sans text-sm text-muted-foreground mb-4">Our emergency team is available around the clock for immediate support in Nairobi and across Kenya.</p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-            <a href="tel:07155855360" className="flex items-center gap-2 px-6 py-3 gold-gradient text-primary-foreground font-sans text-xs tracking-[0.15em] uppercase active:scale-[0.97] transition-transform">
-              <Phone size={14} /> Call Now
+            <a href="tel:0715855360" className="flex items-center gap-2 px-6 py-3 gold-gradient text-primary-foreground font-sans text-xs tracking-[0.15em] uppercase active:scale-[0.97] transition-transform">
+              <Phone size={14} /> Call 0715855360
             </a>
             <a href="https://wa.me/254715250625" className="flex items-center gap-2 px-6 py-3 border border-primary/30 text-gold font-sans text-xs tracking-[0.15em] uppercase hover:bg-primary/10 transition-all active:scale-[0.97]">
-              <MessageCircle size={14} /> WhatsApp
+              <MessageCircle size={14} /> WhatsApp 0715250625
             </a>
           </div>
         </div>
@@ -59,7 +59,7 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <label className="font-sans text-xs tracking-[0.1em] uppercase text-muted-foreground mb-2 block">Phone Number</label>
-                  <input type="tel" value={form.phone} onChange={e => setForm({ ...form, phone: e.target.value })} className="w-full bg-secondary/30 border border-border px-4 py-3 font-sans text-sm text-foreground placeholder:text-muted-foreground/50 focus:border-primary/50 focus:outline-none transition-colors" placeholder="07155855360" />
+                  <input type="tel" value={form.phone} onChange={e => setForm({ ...form, phone: e.target.value })} className="w-full bg-secondary/30 border border-border px-4 py-3 font-sans text-sm text-foreground placeholder:text-muted-foreground/50 focus:border-primary/50 focus:outline-none transition-colors" placeholder="0715855360" />
                 </div>
               </div>
               <div>
@@ -94,8 +94,8 @@ const ContactSection = () => {
           {/* Info */}
           <div className="lg:col-span-2 space-y-8">
             {[
-              { icon: MapPin, title: 'Our Office', lines: ['145 Waiyaki Way', 'Westlands, Nairobi', 'Kenya'] },
-              { icon: Phone, title: 'Phone', lines: ['07155855360', '0715250625'] },
+              { icon: MapPin, title: 'Our Office', lines: ['Kitale Town', 'Trans-Nzoia County', 'Kenya'] },
+              { icon: Phone, title: 'Phone', lines: ['0715855360', '0715250625'] },
               { icon: Mail, title: 'Email', lines: ['info@executivefunerals.co.ke', 'support@executivefunerals.co.ke'] },
               { icon: Clock, title: 'Hours', lines: ['24/7 Emergency Support', 'Office: Mon–Sat, 8AM–6PM'] },
             ].map(({ icon: Icon, title, lines }) => (

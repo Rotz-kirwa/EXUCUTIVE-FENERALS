@@ -49,7 +49,7 @@ const FooterSection = () => (
           <h4 className="font-serif text-lg text-foreground mb-4">Support</h4>
           <ul className="space-y-2 font-sans text-sm text-muted-foreground">
             <li>24/7 Emergency Line</li>
-            <li>07155855360</li>
+            <li>0715855360</li>
             <li>0715250625</li>
             <li>info@executivefunerals.co.ke</li>
             <li className="pt-2">
