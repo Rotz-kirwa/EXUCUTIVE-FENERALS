@@ -3,7 +3,7 @@ import { useScrollReveal } from '@/hooks/useScrollReveal';
 import SectionHeading from './SectionHeading';
 import { Phone, Mail, MapPin, Clock, MessageCircle, Send } from 'lucide-react';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import serviceAreaMapImg from '@/assets/contact-service-area-map.png';
+import serviceAreaMapImg from '@/assets/contact-service-area-map.webp';
 
 const services = [
   'Funeral Planning & Coordination',
@@ -118,6 +118,8 @@ const ContactSection = () => {
                 src={serviceAreaMapImg}
                 alt="Service area map covering Kitale, Bungoma, Eldoret, and Kakamega"
                 className="w-full h-56 object-cover"
+                loading="lazy"
+                decoding="async"
               />
               <div className="px-4 py-3 border-t border-border bg-background/30">
                 <div className="font-sans text-[11px] tracking-[0.16em] uppercase text-gold">Service Area Coverage</div>

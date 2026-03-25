@@ -1,5 +1,6 @@
+import { useEffect, useState } from 'react';
 import { Clock, Users, Shield, Heart } from 'lucide-react';
-import heroImg from '@/assets/hero-funeral.jpg';
+import heroImg from '@/assets/hero-funeral.webp';
 
 const heroVideoUrl = 'https://www.dropbox.com/scl/fi/fxr2b2jtw7gsdysdcy252/vid-1-land.mp4?rlkey=nyl77xs6ex1mckejzb89gedri&st=5yjlekc1&raw=1';
 const supportPhone = '0715855360';
@@ -11,22 +12,49 @@ const trust = [
   { icon: Heart, label: 'Compassionate Staff' },
 ];
 
-const HeroSection = () => (
+const HeroSection = () => {
+  const [shouldLoadVideo, setShouldLoadVideo] = useState(false);
+
+  useEffect(() => {
+    const connection = (navigator as Navigator & { connection?: { saveData?: boolean } }).connection;
+
+    if (connection?.saveData) {
+      return;
+    }
+
+    const timerId = window.setTimeout(() => {
+      setShouldLoadVideo(true);
+    }, 1200);
+
+    return () => window.clearTimeout(timerId);
+  }, []);
+
+  return (
   <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
     {/* Background */}
     <div className="absolute inset-0">
-      <video
-        className="w-full h-full object-cover"
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="metadata"
-        poster={heroImg}
+      <img
+        src={heroImg}
+        alt=""
         aria-hidden="true"
-      >
-        <source src={heroVideoUrl} type="video/mp4" />
-      </video>
+        className="w-full h-full object-cover"
+        decoding="async"
+        fetchPriority="high"
+      />
+      {shouldLoadVideo && (
+        <video
+          className="absolute inset-0 w-full h-full object-cover"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="none"
+          poster={heroImg}
+          aria-hidden="true"
+        >
+          <source src={heroVideoUrl} type="video/mp4" />
+        </video>
+      )}
       <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-background" />
       <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-transparent" />
     </div>
@@ -92,5 +120,6 @@ const HeroSection = () => (
     </div>
   </section>
 );
+};
 
 export default HeroSection;

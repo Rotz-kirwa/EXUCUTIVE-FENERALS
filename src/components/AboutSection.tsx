@@ -19,7 +19,13 @@ const AboutSection = () => {
           {/* Image */}
           <div className={`relative transition-all duration-700 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'}`}>
             <div className="relative overflow-hidden">
-              <img src={aboutImg} alt="Executive Funerals team" className="w-full h-[500px] object-cover" />
+              <img
+                src={aboutImg}
+                alt="Executive Funerals team"
+                className="w-full h-[500px] object-cover"
+                loading="lazy"
+                decoding="async"
+              />
               <div className="absolute inset-0 border border-primary/10" />
             </div>
             {/* Accent */}

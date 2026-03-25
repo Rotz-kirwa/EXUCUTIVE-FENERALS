@@ -3,10 +3,9 @@ import { useScrollReveal } from '@/hooks/useScrollReveal';
 import SectionHeading from './SectionHeading';
 import { ShoppingBag, X, Eye } from 'lucide-react';
 
-import floralImg from '@/assets/service-floral.jpg';
-import tentImg from '@/assets/service-tent.jpg';
-import memorialImg from '@/assets/service-memorial.jpg';
-import hearseImg from '@/assets/service-hearse.jpg';
+import floralImg from '@/assets/service-floral.webp';
+import tentImg from '@/assets/service-tent.webp';
+import hearseImg from '@/assets/service-hearse.webp';
 
 const categories = ['All', 'Caskets', 'Florals', 'Tents & Setup', 'Memorial', 'Transport', 'Burial Equipment'];
 
@@ -107,7 +106,13 @@ const MarketplaceSection = () => {
               style={{ transitionDelay: isVisible ? `${i * 80}ms` : '0ms' }}
             >
               <div className="relative h-52 overflow-hidden">
-                <img src={p.img} alt={p.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                <img
+                  src={p.img}
+                  alt={p.name}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  loading="lazy"
+                  decoding="async"
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-card/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
                   <button onClick={() => setQuickView(p)} className="p-3 border border-primary/50 bg-background/80 backdrop-blur-sm text-gold hover:bg-primary/20 transition-colors active:scale-95">
                     <Eye size={18} />

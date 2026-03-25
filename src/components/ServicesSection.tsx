@@ -2,9 +2,9 @@ import { useScrollReveal } from '@/hooks/useScrollReveal';
 import SectionHeading from './SectionHeading';
 import { ArrowRight, ArrowDownToLine, Car, Package, Flower2, Tent, Church, Shovel, Plane, FileText } from 'lucide-react';
 
-import casketImg from '@/assets/service-casket.jpg';
-import floralImg from '@/assets/service-floral.jpg';
-import tributeProgramsImg from '@/assets/service-tribute-programs.jpg';
+import casketImg from '@/assets/service-casket.webp';
+import floralImg from '@/assets/service-floral.webp';
+import tributeProgramsImg from '@/assets/service-tribute-programs.webp';
 
 const hearseTransportationImg =
   'https://www.dropbox.com/scl/fi/v5cx11kqfts198pl10fc9/fleet.jpeg?rlkey=bjc2ecr63mhzdr54zd5pzf0w3&st=w0ay2uxk&raw=1';
@@ -52,7 +52,13 @@ const ServicesSection = () => {
             >
               {/* Image */}
               <div className="relative h-48 overflow-hidden">
-                <img src={img} alt={title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                <img
+                  src={img}
+                  alt={title}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  loading="lazy"
+                  decoding="async"
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-card via-card/40 to-transparent" />
                 <div className="absolute top-4 left-4 w-10 h-10 border border-primary/30 bg-background/80 backdrop-blur-sm flex items-center justify-center">
                   <Icon size={18} className="text-gold" strokeWidth={1.5} />
