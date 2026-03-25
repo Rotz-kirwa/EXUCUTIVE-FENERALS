@@ -1,17 +1,20 @@
+import { Suspense, lazy } from 'react';
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
 import HeroHighlightsSection from '@/components/HeroHighlightsSection';
 import AboutSection from '@/components/AboutSection';
 import ServicesSection from '@/components/ServicesSection';
 import WhyChooseSection from '@/components/WhyChooseSection';
-import GallerySection from '@/components/GallerySection';
-import MarketplaceSection from '@/components/MarketplaceSection';
 import PackagesSection from '@/components/PackagesSection';
 import TestimonialsSection from '@/components/TestimonialsSection';
 import ProcessSection from '@/components/ProcessSection';
 import ContactSection from '@/components/ContactSection';
 import FooterSection from '@/components/FooterSection';
 import WhatsAppFloat from '@/components/WhatsAppFloat';
+import DeferredSection from '@/components/DeferredSection';
+
+const GallerySection = lazy(() => import('@/components/GallerySection'));
+const MarketplaceSection = lazy(() => import('@/components/MarketplaceSection'));
 
 const Index = () => (
   <div className="overflow-x-hidden">
@@ -27,12 +30,20 @@ const Index = () => (
     <div className="content-auto">
       <WhyChooseSection />
     </div>
-    <div className="content-auto">
-      <GallerySection />
-    </div>
-    <div className="content-auto">
-      <MarketplaceSection />
-    </div>
+    <DeferredSection>
+      <div className="content-auto">
+        <Suspense fallback={<div className="h-px" aria-hidden="true" />}>
+          <GallerySection />
+        </Suspense>
+      </div>
+    </DeferredSection>
+    <DeferredSection>
+      <div className="content-auto">
+        <Suspense fallback={<div className="h-px" aria-hidden="true" />}>
+          <MarketplaceSection />
+        </Suspense>
+      </div>
+    </DeferredSection>
     <div className="content-auto">
       <PackagesSection />
     </div>

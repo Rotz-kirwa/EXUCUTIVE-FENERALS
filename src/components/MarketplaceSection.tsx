@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 import SectionHeading from './SectionHeading';
 import { ShoppingBag, X, Eye } from 'lucide-react';
@@ -60,6 +60,9 @@ const memorialShowcase = {
   tributeFrame: memorialTributeFrameImg,
 };
 
+const MOBILE_INITIAL_PRODUCTS = 6;
+const MOBILE_LOAD_STEP = 6;
+
 const products = [
   { name: 'Heritage Mahogany Casket', cat: 'Caskets', price: 'KSh 135,000', img: casketShowcase.heritage, desc: 'Handcrafted mahogany casket with satin interior lining and polished heritage detailing.' },
   { name: 'Premium Ebony Casket', cat: 'Caskets', price: 'KSh 185,000', img: casketShowcase.ebony, desc: 'Luxurious ebony-finish casket with plush velvet lining and premium chrome fittings.' },
@@ -90,8 +93,26 @@ const MarketplaceSection = () => {
   const { ref, isVisible } = useScrollReveal();
   const [filter, setFilter] = useState('All');
   const [quickView, setQuickView] = useState<(typeof products)[number] | null>(null);
+  const [isMobile, setIsMobile] = useState(false);
+  const [visibleCount, setVisibleCount] = useState(products.length);
 
   const filtered = filter === 'All' ? products : products.filter(p => p.cat === filter);
+  const visibleProducts = isMobile ? filtered.slice(0, visibleCount) : filtered;
+  const hasMoreProducts = isMobile && visibleCount < filtered.length;
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(max-width: 639px)');
+
+    const syncViewport = () => setIsMobile(mediaQuery.matches);
+
+    syncViewport();
+    mediaQuery.addEventListener('change', syncViewport);
+    return () => mediaQuery.removeEventListener('change', syncViewport);
+  }, []);
+
+  useEffect(() => {
+    setVisibleCount(isMobile ? Math.min(MOBILE_INITIAL_PRODUCTS, filtered.length) : filtered.length);
+  }, [filter, filtered.length, isMobile]);
 
   return (
     <section id="marketplace" className="section-padding-lg bg-background">
@@ -117,7 +138,7 @@ const MarketplaceSection = () => {
 
         {/* Products Grid */}
         <div ref={ref} className="mt-8 grid gap-5 sm:mt-10 sm:gap-6 sm:grid-cols-2 md:mt-14 lg:grid-cols-3">
-          {filtered.map((p, i) => (
+          {visibleProducts.map((p, i) => (
             <div
               key={p.name}
               className={`group bg-card border border-border hover:border-primary/30 overflow-hidden transition-all duration-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
@@ -152,6 +173,17 @@ const MarketplaceSection = () => {
             </div>
           ))}
         </div>
+
+        {hasMoreProducts && (
+          <div className="mt-6 flex justify-center sm:hidden">
+            <button
+              onClick={() => setVisibleCount(current => Math.min(current + MOBILE_LOAD_STEP, filtered.length))}
+              className="px-5 py-3 border border-primary/30 text-gold font-sans text-[11px] tracking-[0.14em] uppercase transition-all duration-300 hover:bg-primary/10 active:scale-[0.97]"
+            >
+              Load More Products
+            </button>
+          </div>
+        )}
       </div>
 
       {/* Quick View Modal */}
