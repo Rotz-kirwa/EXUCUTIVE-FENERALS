@@ -1,7 +1,7 @@
 import { Clock, Users, Shield, Heart } from 'lucide-react';
 import heroImg from '@/assets/hero-funeral.jpg';
 
-const heroVideoUrl = 'https://www.dropbox.com/scl/fi/ff65f0ml8z09pz0n6l7l6/full.mp4?rlkey=vlyo2rz1u8s9u5t1o8ykdr8tq&st=aqgwpb22&raw=1';
+const heroVideoUrl = 'https://www.dropbox.com/scl/fi/fxr2b2jtw7gsdysdcy252/vid-1-land.mp4?rlkey=nyl77xs6ex1mckejzb89gedri&st=5yjlekc1&raw=1';
 const supportPhone = '0715855360';
 
 const trust = [
