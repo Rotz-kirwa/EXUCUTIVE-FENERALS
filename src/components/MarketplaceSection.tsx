@@ -6,40 +6,58 @@ import { ShoppingBag, X, Eye } from 'lucide-react';
 import floralImg from '@/assets/service-floral.webp';
 import tentImg from '@/assets/service-tent.webp';
 import hearseImg from '@/assets/service-hearse.webp';
+import casketHeritageImg from '@/assets/marketplace/casket-heritage.webp';
+import casketEbonyImg from '@/assets/marketplace/casket-ebony.webp';
+import casketIvoryImg from '@/assets/marketplace/casket-ivory.webp';
+import casketCopperImg from '@/assets/marketplace/casket-copper.webp';
+import casketExecutiveImg from '@/assets/marketplace/casket-executive.webp';
+import casketSignatureImg from '@/assets/marketplace/casket-signature.webp';
+import floralWhiteEleganceImg from '@/assets/marketplace/floral-white-elegance.webp';
+import floralRemembranceSprayImg from '@/assets/marketplace/floral-remembrance-spray.webp';
+import floralStandingTributeImg from '@/assets/marketplace/floral-standing-tribute.webp';
+import floralSympathyBasketImg from '@/assets/marketplace/floral-sympathy-basket.webp';
+import floralHeartTributeImg from '@/assets/marketplace/floral-heart-tribute.webp';
+import floralRoseFarewellImg from '@/assets/marketplace/floral-rose-farewell.webp';
+import memorialCandleSetImg from '@/assets/marketplace/memorial-candle-set.webp';
+import memorialTributeFrameImg from '@/assets/marketplace/memorial-tribute-frame.webp';
+import transportExecutiveArrivalImg from '@/assets/marketplace/transport-executive-arrival.webp';
+import transportCeremonialEscortImg from '@/assets/marketplace/transport-ceremonial-escort.webp';
+import transportFleetConvoyImg from '@/assets/marketplace/transport-fleet-convoy.webp';
+import equipmentLoweringDeviceImg from '@/assets/marketplace/equipment-lowering-device.webp';
 
 const categories = ['All', 'Caskets', 'Florals', 'Tents & Setup', 'Memorial', 'Transport', 'Burial Equipment'];
 
 const casketShowcase = {
-  heritage: 'https://i.pinimg.com/1200x/2d/e6/a4/2de6a46708535993d94ae3f8927a7abd.jpg',
-  ebony: 'https://i.pinimg.com/736x/81/52/48/815248a7855c0bb0a6c8f79ae9df4b35.jpg',
-  ivory: 'https://i.pinimg.com/736x/28/77/ad/2877ad59924d439258751da72923a046.jpg',
-  copper: 'https://i.pinimg.com/1200x/ac/79/87/ac79877fe8c0fb5a3cbe1c6537aa05b4.jpg',
-  executive: 'https://i.pinimg.com/1200x/fb/d1/a7/fbd1a7bb61fdfb3b85bac3715c5b334f.jpg',
-  signature: 'https://i.pinimg.com/736x/3c/17/f3/3c17f38d16258a5f5c62149a73976962.jpg',
+  heritage: casketHeritageImg,
+  ebony: casketEbonyImg,
+  ivory: casketIvoryImg,
+  copper: casketCopperImg,
+  executive: casketExecutiveImg,
+  signature: casketSignatureImg,
 };
 
 const floralShowcase = {
-  whiteElegance: 'https://fyf.tac-cdn.net/images/products/small/TEV25-3.jpg?auto=webp&quality=80&width=295',
-  remembranceSpray: 'https://fyf.tac-cdn.net/images/products/small/TEV67-5.jpg?auto=webp&quality=80&width=295',
-  standingTribute: 'https://fyf.tac-cdn.net/images/products/small/V7047.jpg?auto=webp&quality=80&width=295',
-  sympathyBasket: 'https://fyf.tac-cdn.net/images/products/small/T281-4.jpg?auto=webp&quality=80&width=295',
-  heartTribute: 'https://fyf.tac-cdn.net/images/products/large/FYF-430.jpg?auto=webp&quality=80&width=590',
-  roseFarewell: 'https://fyf.tac-cdn.net/images/products/small/V7000.jpg?auto=webp&quality=80&width=295',
+  whiteElegance: floralWhiteEleganceImg,
+  remembranceSpray: floralRemembranceSprayImg,
+  standingTribute: floralStandingTributeImg,
+  sympathyBasket: floralSympathyBasketImg,
+  heartTribute: floralHeartTributeImg,
+  roseFarewell: floralRoseFarewellImg,
 };
 
 const transportShowcase = {
-  executiveArrival: 'https://www.dropbox.com/scl/fi/f3818028asnn6ybyp51ub/ap.jpg?rlkey=z25iugcxujl9i1jo15mw40nun&st=0ovsgm0w&raw=1',
-  ceremonialEscort: 'https://www.dropbox.com/scl/fi/bde6um3p0wvxqy9s5ttfc/e9.jpg?rlkey=6mwulmvh1ciaj4pjb8zmec39p&st=kbu4caic&raw=1',
-  fleetConvoy: 'https://www.dropbox.com/scl/fi/v5cx11kqfts198pl10fc9/fleet.jpeg?rlkey=bjc2ecr63mhzdr54zd5pzf0w3&st=f1rs748v&raw=1',
+  executiveArrival: transportExecutiveArrivalImg,
+  ceremonialEscort: transportCeremonialEscortImg,
+  fleetConvoy: transportFleetConvoyImg,
 };
 
 const equipmentShowcase = {
-  loweringDevice: 'https://www.lynchsupply.com/v/vspfiles/photos/LOWID5504S-2.jpg',
+  loweringDevice: equipmentLoweringDeviceImg,
 };
 
 const memorialShowcase = {
-  candleSet: 'https://i.pinimg.com/736x/23/81/11/2381116d2d10fbf588e12ec8ffe1416c.jpg',
-  tributeFrame: 'https://i.pinimg.com/736x/63/05/cf/6305cf615eed8a11954a8680727aa3da.jpg',
+  candleSet: memorialCandleSetImg,
+  tributeFrame: memorialTributeFrameImg,
 };
 
 const products = [
