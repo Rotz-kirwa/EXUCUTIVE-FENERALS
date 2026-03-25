@@ -43,7 +43,7 @@ const ServicesSection = () => {
           subtitle="Every aspect of the farewell journey, handled with expertise, compassion, and an unwavering commitment to excellence."
         />
 
-        <div ref={ref} className="mt-20 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div ref={ref} className="mt-10 grid gap-5 sm:mt-12 sm:gap-6 md:mt-20 md:grid-cols-2 lg:grid-cols-3">
           {services.map(({ icon: Icon, title, desc, img }, i) => (
             <div
               key={title}
@@ -66,7 +66,7 @@ const ServicesSection = () => {
               </div>
 
               {/* Content */}
-              <div className="p-6">
+              <div className="p-5 sm:p-6">
                 <h3 className="font-serif text-xl text-foreground mb-3">{title}</h3>
                 <p className="font-sans text-sm text-muted-foreground leading-relaxed mb-5">{desc}</p>
                 <a href="#contact" className="inline-flex items-center gap-2 font-sans text-xs tracking-[0.1em] uppercase text-gold hover:text-foreground transition-colors group/link">

@@ -138,11 +138,11 @@
   }
 
   .section-padding {
-    @apply py-24 md:py-32 px-4 md:px-8;
+    @apply px-4 py-12 sm:py-16 md:px-8 md:py-32;
   }
 
   .section-padding-lg {
-    @apply py-32 md:py-40 px-4 md:px-8;
+    @apply px-4 py-14 sm:py-20 md:px-8 md:py-40;
   }
 
   .premium-shadow {
@@ -163,12 +163,25 @@
     width: 60px;
     height: 1px;
     background: linear-gradient(90deg, transparent, hsl(var(--gold)), transparent);
-    margin: 1.5rem auto 0;
+    margin: 1rem auto 0;
   }
 
   .content-auto {
     content-visibility: auto;
     contain-intrinsic-size: 1px 960px;
+  }
+}
+
+@media (min-width: 768px) {
+  .line-ornament::after {
+    margin-top: 1.5rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .content-auto {
+    content-visibility: visible;
+    contain-intrinsic-size: auto;
   }
 }
 

@@ -26,7 +26,7 @@ const TestimonialsSection = () => {
       <div className="max-w-4xl mx-auto">
         <SectionHeading label="Testimonials" title="Words From Families We've Served" />
 
-        <div ref={ref} className={`mt-16 text-center transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
+        <div ref={ref} className={`mt-10 text-center transition-all duration-700 sm:mt-12 md:mt-16 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
           <Quote size={40} className="text-gold/30 mx-auto mb-8" />
 
           <div key={current} className="animate-fade-up">
@@ -46,7 +46,7 @@ const TestimonialsSection = () => {
           </div>
 
           {/* Navigation */}
-          <div className="flex items-center justify-center gap-6 mt-12">
+          <div className="mt-10 flex items-center justify-center gap-4 sm:mt-12 sm:gap-6">
             <button onClick={() => setCurrent((current - 1 + testimonials.length) % testimonials.length)} className="p-2 border border-border hover:border-primary/30 text-muted-foreground hover:text-gold transition-all active:scale-95">
               <ChevronLeft size={20} />
             </button>

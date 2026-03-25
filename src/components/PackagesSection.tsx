@@ -16,7 +16,7 @@ const PackagesSection = () => {
           subtitle="From essential services to bespoke experiences, we offer packages designed for every family's needs."
         />
 
-        <div ref={ref} className="mt-20 grid md:grid-cols-2 xl:grid-cols-4 gap-6">
+        <div ref={ref} className="mt-10 grid gap-5 sm:mt-12 sm:gap-6 md:mt-20 md:grid-cols-2 xl:grid-cols-4">
           {funeralPackages.map((pkg, i) => (
             <div
               key={pkg.name}

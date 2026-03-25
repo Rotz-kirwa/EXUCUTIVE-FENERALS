@@ -15,14 +15,14 @@ const AboutSection = () => {
   return (
     <section id="about" className="section-padding-lg bg-charcoal">
       <div ref={ref} className="max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+        <div className="grid items-center gap-10 md:gap-14 lg:grid-cols-2 lg:gap-24">
           {/* Image */}
           <div className={`relative transition-all duration-700 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'}`}>
             <div className="relative overflow-hidden">
               <img
                 src={aboutImg}
                 alt="Executive Funerals team"
-                className="w-full h-[500px] object-cover"
+                className="h-[340px] w-full object-cover sm:h-[420px] md:h-[500px]"
                 loading="lazy"
                 decoding="async"
               />
@@ -34,9 +34,9 @@ const AboutSection = () => {
           </div>
 
           {/* Content */}
-          <div className={`transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'}`}>
-            <span className="text-gold font-sans text-xs tracking-[0.3em] uppercase mb-4 block">Our Story</span>
-            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-light text-foreground leading-[1.15] mb-8">
+            <div className={`transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'}`}>
+              <span className="text-gold font-sans text-xs tracking-[0.3em] uppercase mb-4 block">Our Story</span>
+            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-light text-foreground leading-[1.15] mb-6 md:mb-8">
               A Legacy of<br />Dignity & Compassion
             </h2>
             <div className="space-y-5 text-muted-foreground font-sans text-base leading-relaxed">
@@ -49,9 +49,9 @@ const AboutSection = () => {
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-2 gap-4 mt-12">
+            <div className="mt-8 grid grid-cols-2 gap-3 sm:gap-4 md:mt-12">
               {stats.map(({ value, label }) => (
-                <div key={label} className="py-5 px-4 border border-border bg-secondary/30">
+                <div key={label} className="border border-border bg-secondary/30 px-4 py-4 sm:py-5">
                   <div className="font-serif text-2xl md:text-3xl text-gold font-light">{value}</div>
                   <div className="font-sans text-xs tracking-[0.15em] uppercase text-muted-foreground mt-1">{label}</div>
                 </div>

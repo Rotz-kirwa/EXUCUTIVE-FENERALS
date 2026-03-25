@@ -22,7 +22,7 @@ const ProcessSection = () => {
           subtitle="From first contact to ongoing support, we walk beside you through every step."
         />
 
-        <div ref={ref} className="mt-20 relative">
+        <div ref={ref} className="relative mt-10 sm:mt-12 md:mt-20">
           {/* Vertical line */}
           <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-primary/30 to-transparent hidden sm:block" />
 
@@ -31,7 +31,7 @@ const ProcessSection = () => {
             return (
               <div
                 key={title}
-                className={`relative flex items-start gap-6 mb-16 last:mb-0 sm:gap-0 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
+                className={`relative mb-10 flex items-start gap-6 transition-all duration-700 last:mb-0 sm:mb-16 sm:gap-0 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
                 style={{ transitionDelay: isVisible ? `${i * 150}ms` : '0ms' }}
               >
                 {/* Desktop layout */}

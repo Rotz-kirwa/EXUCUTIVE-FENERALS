@@ -8,15 +8,15 @@ interface Props {
 const SectionHeading = ({ label, title, subtitle, align = 'center' }: Props) => (
   <div className={align === 'center' ? 'text-center max-w-3xl mx-auto' : 'max-w-2xl'}>
     {label && (
-      <span className="text-gold font-sans text-xs font-semibold tracking-[0.2em] sm:tracking-[0.3em] uppercase mb-4 block">
+      <span className="mb-3 block text-gold font-sans text-xs font-semibold tracking-[0.2em] uppercase sm:mb-4 sm:tracking-[0.3em]">
         {label}
       </span>
     )}
-    <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-light text-foreground leading-[1.15] tracking-tight line-ornament">
+    <h2 className="line-ornament font-serif text-[2.6rem] font-light leading-[1.08] tracking-tight text-foreground md:text-4xl lg:text-5xl">
       {title}
     </h2>
     {subtitle && (
-      <p className="mt-6 text-muted-foreground font-sans text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
+      <p className="mx-auto mt-4 max-w-2xl text-[15px] leading-relaxed text-muted-foreground font-sans md:mt-6 md:text-lg">
         {subtitle}
       </p>
     )}

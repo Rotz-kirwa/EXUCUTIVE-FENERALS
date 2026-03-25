@@ -23,11 +23,11 @@ const WhyChooseSection = () => {
           subtitle="We set the standard for premium funeral services through unwavering commitment to excellence."
         />
 
-        <div ref={ref} className="mt-20 grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div ref={ref} className="mt-10 grid gap-5 sm:mt-12 sm:gap-6 md:mt-20 md:grid-cols-2 lg:grid-cols-3">
           {reasons.map(({ icon: Icon, title, desc }, i) => (
             <div
               key={title}
-              className={`group p-8 border border-border/50 bg-secondary/20 hover:bg-secondary/40 transition-all duration-500 hover:border-primary/30 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
+              className={`group border border-border/50 bg-secondary/20 p-6 transition-all duration-500 hover:border-primary/30 hover:bg-secondary/40 sm:p-7 md:p-8 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
               style={{ transitionDelay: isVisible ? `${i * 100}ms` : '0ms' }}
             >
               <div className="w-12 h-12 border border-primary/30 flex items-center justify-center mb-6 group-hover:gold-glow transition-shadow duration-500">

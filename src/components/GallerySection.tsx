@@ -47,7 +47,7 @@ const GallerySection = () => {
           subtitle="A glimpse into the dignified ceremonies, premium arrangements, and elegant settings we create."
         />
 
-        <div ref={ref} className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-3 auto-rows-[200px] md:auto-rows-[240px]">
+        <div ref={ref} className="mt-10 grid auto-rows-[148px] grid-cols-2 gap-2 sm:mt-12 sm:auto-rows-[170px] sm:gap-3 md:mt-20 md:grid-cols-4 md:auto-rows-[240px]">
           {gallery.map((item, i) => (
             <div
               key={i}

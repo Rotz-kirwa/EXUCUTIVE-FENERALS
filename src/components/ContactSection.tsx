@@ -37,7 +37,7 @@ const ContactSection = () => {
         />
 
         {/* Emergency Banner */}
-          <div className={`mt-12 max-w-3xl mx-auto p-6 border border-primary/30 bg-primary/5 text-center transition-all duration-700 ${isVisible ? 'opacity-100' : 'opacity-0'}`} ref={ref}>
+          <div className={`mx-auto mt-10 max-w-3xl border border-primary/30 bg-primary/5 p-5 text-center transition-all duration-700 sm:mt-12 sm:p-6 ${isVisible ? 'opacity-100' : 'opacity-0'}`} ref={ref}>
             <div className="font-serif text-lg text-gold mb-2">Urgent Funeral Assistance?</div>
             <p className="font-sans text-sm text-muted-foreground mb-4">Our emergency team is available around the clock for immediate support in Nairobi and across Kenya.</p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
@@ -50,7 +50,7 @@ const ContactSection = () => {
           </div>
         </div>
 
-        <div className="mt-16 grid lg:grid-cols-5 gap-12">
+        <div className="mt-12 grid gap-8 md:mt-16 md:gap-12 lg:grid-cols-5">
           {/* Form */}
           <div className="lg:col-span-3">
             <form onSubmit={handleSubmit} className="space-y-5">

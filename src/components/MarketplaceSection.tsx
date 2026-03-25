@@ -103,12 +103,12 @@ const MarketplaceSection = () => {
         />
 
         {/* Filters */}
-        <div className="flex flex-wrap justify-center gap-3 mt-12">
+        <div className="mt-8 flex flex-wrap justify-center gap-2.5 sm:mt-10 sm:gap-3 md:mt-12">
           {categories.map(cat => (
             <button
               key={cat}
               onClick={() => setFilter(cat)}
-              className={`px-5 py-2 font-sans text-xs tracking-[0.15em] uppercase border transition-all duration-300 active:scale-[0.97] ${filter === cat ? 'border-primary bg-primary/10 text-gold' : 'border-border text-muted-foreground hover:border-primary/30 hover:text-foreground'}`}
+              className={`px-4 py-2 font-sans text-[11px] tracking-[0.12em] uppercase border transition-all duration-300 active:scale-[0.97] sm:px-5 sm:text-xs sm:tracking-[0.15em] ${filter === cat ? 'border-primary bg-primary/10 text-gold' : 'border-border text-muted-foreground hover:border-primary/30 hover:text-foreground'}`}
             >
               {cat}
             </button>
@@ -116,7 +116,7 @@ const MarketplaceSection = () => {
         </div>
 
         {/* Products Grid */}
-        <div ref={ref} className="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div ref={ref} className="mt-8 grid gap-5 sm:mt-10 sm:gap-6 sm:grid-cols-2 md:mt-14 lg:grid-cols-3">
           {filtered.map((p, i) => (
             <div
               key={p.name}
@@ -137,7 +137,7 @@ const MarketplaceSection = () => {
                   </button>
                 </div>
               </div>
-              <div className="p-6">
+              <div className="p-5 sm:p-6">
                 <span className="font-sans text-[10px] tracking-[0.2em] uppercase text-gold">{p.cat}</span>
                 <h3 className="font-serif text-lg text-foreground mt-1 mb-2">{p.name}</h3>
                 <p className="font-sans text-sm text-muted-foreground leading-relaxed mb-4">{p.desc}</p>
