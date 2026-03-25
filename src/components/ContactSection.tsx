@@ -3,6 +3,7 @@ import { useScrollReveal } from '@/hooks/useScrollReveal';
 import SectionHeading from './SectionHeading';
 import { Phone, Mail, MapPin, Clock, MessageCircle, Send } from 'lucide-react';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import serviceAreaMapImg from '@/assets/contact-service-area-map.png';
 
 const services = [
   'Funeral Planning & Coordination',
@@ -12,6 +13,7 @@ const services = [
   'Tent & Chair Setup',
   'Memorial Service',
   'Burial Coordination',
+  'Casket Lowering Device',
   'Upcountry & International Repatriation',
   'Full Package Inquiry',
 ];
@@ -110,9 +112,17 @@ const ContactSection = () => {
               </div>
             ))}
 
-            {/* Map placeholder */}
-            <div className="w-full h-48 bg-secondary/30 border border-border flex items-center justify-center">
-              <span className="font-sans text-xs text-muted-foreground tracking-widest uppercase">Map Location</span>
+            {/* Service area map */}
+            <div className="border border-border bg-secondary/20 overflow-hidden">
+              <img
+                src={serviceAreaMapImg}
+                alt="Service area map covering Kitale, Bungoma, Eldoret, and Kakamega"
+                className="w-full h-56 object-cover"
+              />
+              <div className="px-4 py-3 border-t border-border bg-background/30">
+                <div className="font-sans text-[11px] tracking-[0.16em] uppercase text-gold">Service Area Coverage</div>
+                <div className="font-sans text-sm text-muted-foreground mt-1">Kitale, Bungoma, Eldoret, Kakamega, and surrounding counties.</div>
+              </div>
             </div>
           </div>
         </div>

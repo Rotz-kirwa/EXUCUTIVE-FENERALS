@@ -10,6 +10,7 @@ import TestimonialsSection from '@/components/TestimonialsSection';
 import ProcessSection from '@/components/ProcessSection';
 import ContactSection from '@/components/ContactSection';
 import FooterSection from '@/components/FooterSection';
+import WhatsAppFloat from '@/components/WhatsAppFloat';
 
 const Index = () => (
   <>
@@ -25,6 +26,7 @@ const Index = () => (
     <ProcessSection />
     <ContactSection />
     <FooterSection />
+    <WhatsAppFloat />
   </>
 );
 

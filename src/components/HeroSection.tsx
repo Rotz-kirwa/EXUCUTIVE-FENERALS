@@ -1,6 +1,9 @@
 import { Clock, Users, Shield, Heart } from 'lucide-react';
 import heroImg from '@/assets/hero-funeral.jpg';
 
+const heroVideoUrl = 'https://www.dropbox.com/scl/fi/ff65f0ml8z09pz0n6l7l6/full.mp4?rlkey=vlyo2rz1u8s9u5t1o8ykdr8tq&st=aqgwpb22&raw=1';
+const supportPhone = '0715855360';
+
 const trust = [
   { icon: Clock, label: '24/7 Support' },
   { icon: Users, label: 'Professional Coordination' },
@@ -12,7 +15,18 @@ const HeroSection = () => (
   <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
     {/* Background */}
     <div className="absolute inset-0">
-      <img src={heroImg} alt="Dignified funeral memorial service" className="w-full h-full object-cover" />
+      <video
+        className="w-full h-full object-cover"
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="metadata"
+        poster={heroImg}
+        aria-hidden="true"
+      >
+        <source src={heroVideoUrl} type="video/mp4" />
+      </video>
       <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-background" />
       <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-transparent" />
     </div>
@@ -36,13 +50,27 @@ const HeroSection = () => (
         Executive Funerals provides compassionate, well-coordinated, and premium funeral services for families in Nairobi and across Kenya, honoring every life with dignity, beauty, and respect.
       </p>
 
-      <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-20 opacity-0 animate-fade-up" style={{ animationDelay: '1000ms' }}>
-        <a href="#contact" className="px-8 py-4 gold-gradient text-primary-foreground font-sans text-sm tracking-[0.15em] uppercase transition-all duration-300 hover:shadow-lg hover:shadow-primary/20 active:scale-[0.97]">
-          Book a Consultation
-        </a>
-        <a href="#services" className="px-8 py-4 border border-primary/30 text-foreground font-sans text-sm tracking-[0.15em] uppercase hover:bg-primary/5 transition-all duration-300 active:scale-[0.97]">
-          Explore Services
-        </a>
+      <div className="mb-20 opacity-0 animate-fade-up" style={{ animationDelay: '1000ms' }}>
+        <div className="grid grid-cols-2 gap-3 sm:hidden">
+          <a href="#contact" className="px-4 py-3 gold-gradient text-primary-foreground font-sans text-[11px] tracking-[0.14em] uppercase text-center transition-all duration-300 active:scale-[0.97]">
+            Book a Consultation
+          </a>
+          <a href="#services" className="px-4 py-3 border border-primary/30 text-foreground font-sans text-[11px] tracking-[0.14em] uppercase text-center hover:bg-primary/5 transition-all duration-300 active:scale-[0.97]">
+            Explore Services
+          </a>
+          <a href={`tel:${supportPhone}`} className="col-span-2 px-4 py-3 border border-primary/30 bg-background/15 text-gold font-sans text-[11px] tracking-[0.14em] uppercase text-center backdrop-blur-sm hover:bg-primary/10 transition-all duration-300 active:scale-[0.97]">
+            24/7 Support
+          </a>
+        </div>
+
+        <div className="hidden sm:flex items-center justify-center gap-4">
+          <a href="#contact" className="px-8 py-4 gold-gradient text-primary-foreground font-sans text-sm tracking-[0.15em] uppercase transition-all duration-300 hover:shadow-lg hover:shadow-primary/20 active:scale-[0.97]">
+            Book a Consultation
+          </a>
+          <a href="#services" className="px-8 py-4 border border-primary/30 text-foreground font-sans text-sm tracking-[0.15em] uppercase hover:bg-primary/5 transition-all duration-300 active:scale-[0.97]">
+            Explore Services
+          </a>
+        </div>
       </div>
 
       {/* Trust Indicators */}

@@ -1,24 +1,33 @@
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 import SectionHeading from './SectionHeading';
-import { ArrowRight, Car, Package, Flower2, Tent, HeartHandshake, Church, Shovel, Plane, FileText } from 'lucide-react';
+import { ArrowRight, ArrowDownToLine, Car, Package, Flower2, Tent, Church, Shovel, Plane, FileText } from 'lucide-react';
 
-import hearseImg from '@/assets/service-hearse.jpg';
 import casketImg from '@/assets/service-casket.jpg';
 import floralImg from '@/assets/service-floral.jpg';
-import tentImg from '@/assets/service-tent.jpg';
-import memorialImg from '@/assets/service-memorial.jpg';
-import burialImg from '@/assets/service-burial.jpg';
 import tributeProgramsImg from '@/assets/service-tribute-programs.jpg';
 
+const hearseTransportationImg =
+  'https://www.dropbox.com/scl/fi/v5cx11kqfts198pl10fc9/fleet.jpeg?rlkey=bjc2ecr63mhzdr54zd5pzf0w3&st=w0ay2uxk&raw=1';
+const tentSetupImg =
+  'https://www.dropbox.com/scl/fi/eno5rin70gowt8m4hhbfk/tents.jpeg?rlkey=1gturrzq6bakrmiqetd6z58un&st=da93a9zy&raw=1';
+const memorialServiceSetupImg =
+  'https://www.dropbox.com/scl/fi/vv1tqhxjzd1rznuly36s1/mss.jpeg?rlkey=7g74wjg4j8z9q6q2qadeqohz3&st=7nq6hnfk&raw=1';
+const burialProcessCoordinationImg =
+  'https://www.dropbox.com/scl/fi/b7xmhfot4d9y1kpryij8k/cod.jpeg?rlkey=btl87dw6mtmy9nnqj4bgxej8z&st=tc3o39yu&raw=1';
+const casketLoweringDeviceImg =
+  'https://www.finero.eu/wp-content/uploads/2018/11/winda_pogrzebowa_frigid_zestaw_1200.jpg';
+const repatriationImg =
+  'https://www.dropbox.com/scl/fi/3mrrudnkzhyzm8vhibdlx/repatriation.jpeg?rlkey=8gcgapkfnam9awf0as7u78u9e&st=an2jhef0&raw=1';
+
 const services = [
-  { icon: Car, title: 'Hearse Transportation', desc: 'Premium fleet of luxury hearses providing dignified transportation with professional chauffeurs.', img: hearseImg },
+  { icon: Car, title: 'Hearse Transportation', desc: 'Premium fleet of luxury hearses providing dignified transportation with professional chauffeurs.', img: hearseTransportationImg },
   { icon: Package, title: 'Casket & Coffin Selection', desc: 'Curated collection of premium caskets and coffins in various styles, materials, and finishes.', img: casketImg },
   { icon: Flower2, title: 'Floral Arrangements', desc: 'Bespoke funeral floral tributes designed to honor and celebrate the life of your loved one.', img: floralImg },
-  { icon: Tent, title: 'Tent & Chair Setup', desc: 'Elegant outdoor ceremony setups with premium tenting, seating, and decor for graveside services.', img: tentImg },
-  { icon: HeartHandshake, title: 'Body Handling & Preservation', desc: 'Professional and respectful body preparation, preservation, and care by experienced specialists.', img: memorialImg },
-  { icon: Church, title: 'Memorial Service Setup', desc: 'Beautiful memorial settings with candles, tributes, photo displays, and dignified ambiance.', img: memorialImg },
-  { icon: Shovel, title: 'Burial Process Coordination', desc: 'Seamless coordination of burial proceedings with cemetery liaisons and all required logistics.', img: burialImg },
-  { icon: Plane, title: 'Repatriation Assistance', desc: 'International and domestic transportation of remains with full documentation and compliance support.', img: hearseImg },
+  { icon: Tent, title: 'Tent & Chair Setup', desc: 'Elegant outdoor ceremony setups with premium tenting, seating, and decor for graveside services.', img: tentSetupImg },
+  { icon: Church, title: 'Memorial Service Setup', desc: 'Beautiful memorial settings with candles, tributes, photo displays, and dignified ambiance.', img: memorialServiceSetupImg },
+  { icon: Shovel, title: 'Burial Process Coordination', desc: 'Seamless coordination of burial proceedings with cemetery liaisons and all required logistics.', img: burialProcessCoordinationImg },
+  { icon: ArrowDownToLine, title: 'Casket Lowering Device', desc: 'Professional graveside casket lowering equipment for a smooth, dignified, and secure final committal service.', img: casketLoweringDeviceImg },
+  { icon: Plane, title: 'Repatriation Assistance', desc: 'International and domestic transportation of remains with full documentation and compliance support.', img: repatriationImg },
   { icon: FileText, title: 'Custom Tribute Programs', desc: 'Professionally designed tribute programs, memorial booklets, and ceremony stationery.', img: tributeProgramsImg },
 ];
 
