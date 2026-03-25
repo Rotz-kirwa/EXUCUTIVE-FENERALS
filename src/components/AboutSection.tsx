@@ -1,5 +1,6 @@
 import { useScrollReveal } from '@/hooks/useScrollReveal';
-import aboutImg from '@/assets/about-team.jpg';
+
+const aboutImg = 'https://www.dropbox.com/scl/fi/0wnchpahndltn5msxbr2w/mar.jpeg?rlkey=9nrsh6mpd9xhk53acjlt2av62&st=3xnydyl2&raw=1';
 
 const stats = [
   { value: '2,400+', label: 'Families Served' },

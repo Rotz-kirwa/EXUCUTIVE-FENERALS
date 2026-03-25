@@ -3,30 +3,76 @@ import { useScrollReveal } from '@/hooks/useScrollReveal';
 import SectionHeading from './SectionHeading';
 import { ShoppingBag, X, Eye } from 'lucide-react';
 
-import casketImg from '@/assets/service-casket.jpg';
 import floralImg from '@/assets/service-floral.jpg';
 import tentImg from '@/assets/service-tent.jpg';
 import memorialImg from '@/assets/service-memorial.jpg';
 import hearseImg from '@/assets/service-hearse.jpg';
 
-const categories = ['All', 'Caskets', 'Florals', 'Tents & Setup', 'Memorial', 'Transport'];
+const categories = ['All', 'Caskets', 'Florals', 'Tents & Setup', 'Memorial', 'Transport', 'Burial Equipment'];
+
+const casketShowcase = {
+  heritage: 'https://i.pinimg.com/1200x/2d/e6/a4/2de6a46708535993d94ae3f8927a7abd.jpg',
+  ebony: 'https://i.pinimg.com/736x/81/52/48/815248a7855c0bb0a6c8f79ae9df4b35.jpg',
+  ivory: 'https://i.pinimg.com/736x/28/77/ad/2877ad59924d439258751da72923a046.jpg',
+  copper: 'https://i.pinimg.com/1200x/ac/79/87/ac79877fe8c0fb5a3cbe1c6537aa05b4.jpg',
+  executive: 'https://i.pinimg.com/1200x/fb/d1/a7/fbd1a7bb61fdfb3b85bac3715c5b334f.jpg',
+  signature: 'https://i.pinimg.com/736x/3c/17/f3/3c17f38d16258a5f5c62149a73976962.jpg',
+};
+
+const floralShowcase = {
+  whiteElegance: 'https://fyf.tac-cdn.net/images/products/small/TEV25-3.jpg?auto=webp&quality=80&width=295',
+  remembranceSpray: 'https://fyf.tac-cdn.net/images/products/small/TEV67-5.jpg?auto=webp&quality=80&width=295',
+  standingTribute: 'https://fyf.tac-cdn.net/images/products/small/V7047.jpg?auto=webp&quality=80&width=295',
+  sympathyBasket: 'https://fyf.tac-cdn.net/images/products/small/T281-4.jpg?auto=webp&quality=80&width=295',
+  heartTribute: 'https://fyf.tac-cdn.net/images/products/large/FYF-430.jpg?auto=webp&quality=80&width=590',
+  roseFarewell: 'https://fyf.tac-cdn.net/images/products/small/V7000.jpg?auto=webp&quality=80&width=295',
+};
+
+const transportShowcase = {
+  executiveArrival: 'https://www.dropbox.com/scl/fi/f3818028asnn6ybyp51ub/ap.jpg?rlkey=z25iugcxujl9i1jo15mw40nun&st=0ovsgm0w&raw=1',
+  ceremonialEscort: 'https://www.dropbox.com/scl/fi/bde6um3p0wvxqy9s5ttfc/e9.jpg?rlkey=6mwulmvh1ciaj4pjb8zmec39p&st=kbu4caic&raw=1',
+  fleetConvoy: 'https://www.dropbox.com/scl/fi/v5cx11kqfts198pl10fc9/fleet.jpeg?rlkey=bjc2ecr63mhzdr54zd5pzf0w3&st=f1rs748v&raw=1',
+};
+
+const equipmentShowcase = {
+  loweringDevice: 'https://www.lynchsupply.com/v/vspfiles/photos/LOWID5504S-2.jpg',
+};
+
+const memorialShowcase = {
+  candleSet: 'https://i.pinimg.com/736x/23/81/11/2381116d2d10fbf588e12ec8ffe1416c.jpg',
+  tributeFrame: 'https://i.pinimg.com/736x/63/05/cf/6305cf615eed8a11954a8680727aa3da.jpg',
+};
 
 const products = [
-  { name: 'Heritage Mahogany Casket', cat: 'Caskets', price: 'KSh 135,000', img: casketImg, desc: 'Handcrafted mahogany casket with satin interior lining and gold-plated handles.' },
-  { name: 'Premium Ebony Casket', cat: 'Caskets', price: 'KSh 185,000', img: casketImg, desc: 'Luxurious ebony casket with velvet interior and chrome fittings.' },
+  { name: 'Heritage Mahogany Casket', cat: 'Caskets', price: 'KSh 135,000', img: casketShowcase.heritage, desc: 'Handcrafted mahogany casket with satin interior lining and polished heritage detailing.' },
+  { name: 'Premium Ebony Casket', cat: 'Caskets', price: 'KSh 185,000', img: casketShowcase.ebony, desc: 'Luxurious ebony-finish casket with plush velvet lining and premium chrome fittings.' },
+  { name: 'Ivory Rest Casket', cat: 'Caskets', price: 'KSh 165,000', img: casketShowcase.ivory, desc: 'Elegant ivory-tone casket designed for serene memorial styling and a dignified final tribute.' },
+  { name: 'Royal Copper Trim Casket', cat: 'Caskets', price: 'KSh 210,000', img: casketShowcase.copper, desc: 'Refined casket with rich copper-toned trim, tailored for families seeking a distinguished presentation.' },
+  { name: 'Executive Gold Accent Casket', cat: 'Caskets', price: 'KSh 245,000', img: casketShowcase.executive, desc: 'Premium executive-grade casket featuring gold-accented craftsmanship and a stately ceremonial look.' },
+  { name: 'Signature Walnut Casket', cat: 'Caskets', price: 'KSh 195,000', img: casketShowcase.signature, desc: 'Signature walnut-finish casket with elegant panel detailing and a calm, premium ceremonial presence.' },
   { name: 'White Rose Memorial Wreath', cat: 'Florals', price: 'KSh 18,500', img: floralImg, desc: 'Elegant white rose and lily wreath arrangement for memorial tributes.' },
   { name: 'Cascade Lily Tribute', cat: 'Florals', price: 'KSh 24,000', img: floralImg, desc: 'Cascading lily and greenery arrangement for casket display.' },
+  { name: 'White Elegance Tribute', cat: 'Florals', price: 'KSh 21,500', img: floralShowcase.whiteElegance, desc: 'Soft white sympathy arrangement designed for a calm, graceful memorial presentation.' },
+  { name: 'Golden Remembrance Spray', cat: 'Florals', price: 'KSh 28,000', img: floralShowcase.remembranceSpray, desc: 'Premium standing spray with warm tones and layered blooms for a dignified farewell.' },
+  { name: 'Standing Grace Wreath', cat: 'Florals', price: 'KSh 32,500', img: floralShowcase.standingTribute, desc: 'Full standing tribute wreath created to honor a life with elegance and presence.' },
+  { name: 'Sympathy Garden Basket', cat: 'Florals', price: 'KSh 19,800', img: floralShowcase.sympathyBasket, desc: 'Refined basket arrangement with balanced greenery and fresh blooms for family tribute tables.' },
+  { name: 'Heartfelt Memorial Tribute', cat: 'Florals', price: 'KSh 35,000', img: floralShowcase.heartTribute, desc: 'Large-scale premium floral tribute arrangement for prominent ceremony displays.' },
+  { name: 'Rose Farewell Bouquet', cat: 'Florals', price: 'KSh 17,500', img: floralShowcase.roseFarewell, desc: 'Classic rose-focused sympathy bouquet suited for graveside, chapel, or home memorial settings.' },
   { name: 'Premium Canopy Setup', cat: 'Tents & Setup', price: 'KSh 65,000', img: tentImg, desc: 'Complete canopy tent with draping, chairs, and setup for up to 100 guests.' },
   { name: 'Deluxe Chair Package (50)', cat: 'Tents & Setup', price: 'KSh 22,000', img: tentImg, desc: 'Premium padded chairs with covers and sashes for 50 guests.' },
-  { name: 'Memorial Candle Set', cat: 'Memorial', price: 'KSh 8,500', img: memorialImg, desc: 'Set of 12 premium pillar candles with glass holders for memorial displays.' },
-  { name: 'Gold Tribute Frame', cat: 'Memorial', price: 'KSh 12,000', img: memorialImg, desc: 'Ornate gold-finish tribute frame for displaying portraits at ceremonies.' },
+  { name: 'Memorial Candle Set', cat: 'Memorial', price: 'KSh 8,500', img: memorialShowcase.candleSet, desc: 'Set of 12 premium pillar candles with glass holders for memorial displays.' },
+  { name: 'Gold Tribute Frame', cat: 'Memorial', price: 'KSh 12,000', img: memorialShowcase.tributeFrame, desc: 'Ornate gold-finish tribute frame for displaying portraits at ceremonies.' },
   { name: 'Premium Hearse Booking', cat: 'Transport', price: 'Request Quote', img: hearseImg, desc: 'Luxury hearse with professional chauffeur for dignified transportation.' },
+  { name: 'Executive Arrival Vehicle', cat: 'Transport', price: 'Request Quote', img: transportShowcase.executiveArrival, desc: 'Premium ceremonial arrival vehicle for dignified family and VIP transport during memorial proceedings.' },
+  { name: 'Ceremonial Escort Car', cat: 'Transport', price: 'Request Quote', img: transportShowcase.ceremonialEscort, desc: 'Professional escort transport option suited for formal procession support and high-touch family logistics.' },
+  { name: 'Funeral Fleet Convoy', cat: 'Transport', price: 'Request Quote', img: transportShowcase.fleetConvoy, desc: 'Multi-vehicle transport convoy for coordinated funeral movement between home, church, and graveside locations.' },
+  { name: 'Professional Casket Lowering Device', cat: 'Burial Equipment', price: 'Request Quote', img: equipmentShowcase.loweringDevice, desc: 'Professional graveside lowering device engineered for a smooth, secure, and dignified final committal service.' },
 ];
 
 const MarketplaceSection = () => {
   const { ref, isVisible } = useScrollReveal();
   const [filter, setFilter] = useState('All');
-  const [quickView, setQuickView] = useState<number | null>(null);
+  const [quickView, setQuickView] = useState<(typeof products)[number] | null>(null);
 
   const filtered = filter === 'All' ? products : products.filter(p => p.cat === filter);
 
@@ -63,7 +109,7 @@ const MarketplaceSection = () => {
               <div className="relative h-52 overflow-hidden">
                 <img src={p.img} alt={p.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-gradient-to-t from-card/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
-                  <button onClick={() => setQuickView(i)} className="p-3 border border-primary/50 bg-background/80 backdrop-blur-sm text-gold hover:bg-primary/20 transition-colors active:scale-95">
+                  <button onClick={() => setQuickView(p)} className="p-3 border border-primary/50 bg-background/80 backdrop-blur-sm text-gold hover:bg-primary/20 transition-colors active:scale-95">
                     <Eye size={18} />
                   </button>
                 </div>
@@ -86,23 +132,23 @@ const MarketplaceSection = () => {
       </div>
 
       {/* Quick View Modal */}
-      {quickView !== null && (
+      {quickView && (
         <div className="fixed inset-0 z-[100] bg-black/80 flex items-center justify-center p-4 animate-fade-in" onClick={() => setQuickView(null)}>
           <div className="bg-card border border-border max-w-2xl w-full max-h-[90vh] overflow-auto animate-scale-up" onClick={e => e.stopPropagation()}>
             <div className="relative">
-              <img src={products[quickView].img} alt={products[quickView].name} className="w-full h-64 md:h-80 object-cover" />
+              <img src={quickView.img} alt={quickView.name} className="w-full h-64 md:h-80 object-cover" />
               <button onClick={() => setQuickView(null)} className="absolute top-4 right-4 p-2 bg-background/80 text-foreground hover:text-gold transition-colors">
                 <X size={20} />
               </button>
             </div>
             <div className="p-8">
-              <span className="font-sans text-[10px] tracking-[0.2em] uppercase text-gold">{products[quickView].cat}</span>
-              <h3 className="font-serif text-2xl text-foreground mt-2 mb-4">{products[quickView].name}</h3>
-              <p className="font-sans text-sm text-muted-foreground leading-relaxed mb-6">{products[quickView].desc}</p>
+              <span className="font-sans text-[10px] tracking-[0.2em] uppercase text-gold">{quickView.cat}</span>
+              <h3 className="font-serif text-2xl text-foreground mt-2 mb-4">{quickView.name}</h3>
+              <p className="font-sans text-sm text-muted-foreground leading-relaxed mb-6">{quickView.desc}</p>
               <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between">
-                <span className="font-serif text-2xl text-gold">{products[quickView].price}</span>
+                <span className="font-serif text-2xl text-gold">{quickView.price}</span>
                 <a href="#contact" className="px-6 py-3 gold-gradient text-primary-foreground font-sans text-xs tracking-[0.15em] uppercase active:scale-[0.97] transition-transform">
-                  {products[quickView].price === 'Request Quote' ? 'Request Quote' : 'Order Now'}
+                  {quickView.price === 'Request Quote' ? 'Request Quote' : 'Order Now'}
                 </a>
               </div>
             </div>
