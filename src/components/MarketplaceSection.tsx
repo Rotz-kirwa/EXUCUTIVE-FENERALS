@@ -72,7 +72,7 @@ const MarketplaceSection = () => {
                 <span className="font-sans text-[10px] tracking-[0.2em] uppercase text-gold">{p.cat}</span>
                 <h3 className="font-serif text-lg text-foreground mt-1 mb-2">{p.name}</h3>
                 <p className="font-sans text-sm text-muted-foreground leading-relaxed mb-4">{p.desc}</p>
-                <div className="flex items-center justify-between">
+                <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:justify-between">
                   <span className="font-serif text-xl text-gold">{p.price}</span>
                   <button className="flex items-center gap-2 px-4 py-2 border border-primary/30 text-gold font-sans text-xs tracking-[0.1em] uppercase hover:bg-primary/10 transition-all active:scale-[0.97]">
                     <ShoppingBag size={14} />
@@ -99,7 +99,7 @@ const MarketplaceSection = () => {
               <span className="font-sans text-[10px] tracking-[0.2em] uppercase text-gold">{products[quickView].cat}</span>
               <h3 className="font-serif text-2xl text-foreground mt-2 mb-4">{products[quickView].name}</h3>
               <p className="font-sans text-sm text-muted-foreground leading-relaxed mb-6">{products[quickView].desc}</p>
-              <div className="flex items-center justify-between">
+              <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between">
                 <span className="font-serif text-2xl text-gold">{products[quickView].price}</span>
                 <a href="#contact" className="px-6 py-3 gold-gradient text-primary-foreground font-sans text-xs tracking-[0.15em] uppercase active:scale-[0.97] transition-transform">
                   {products[quickView].price === 'Request Quote' ? 'Request Quote' : 'Order Now'}

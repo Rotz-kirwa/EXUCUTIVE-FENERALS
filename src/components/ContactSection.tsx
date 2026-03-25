@@ -37,14 +37,14 @@ const ContactSection = () => {
         />
 
         {/* Emergency Banner */}
-        <div className={`mt-12 max-w-3xl mx-auto p-6 border border-primary/30 bg-primary/5 text-center transition-all duration-700 ${isVisible ? 'opacity-100' : 'opacity-0'}`} ref={ref}>
-          <div className="font-serif text-lg text-gold mb-2">Urgent Funeral Assistance?</div>
-          <p className="font-sans text-sm text-muted-foreground mb-4">Our emergency team is available around the clock for immediate support in Nairobi and across Kenya.</p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-            <a href="tel:0715855360" className="flex items-center gap-2 px-6 py-3 gold-gradient text-primary-foreground font-sans text-xs tracking-[0.15em] uppercase active:scale-[0.97] transition-transform">
+          <div className={`mt-12 max-w-3xl mx-auto p-6 border border-primary/30 bg-primary/5 text-center transition-all duration-700 ${isVisible ? 'opacity-100' : 'opacity-0'}`} ref={ref}>
+            <div className="font-serif text-lg text-gold mb-2">Urgent Funeral Assistance?</div>
+            <p className="font-sans text-sm text-muted-foreground mb-4">Our emergency team is available around the clock for immediate support in Nairobi and across Kenya.</p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+            <a href="tel:0715855360" className="flex w-full justify-center items-center gap-2 px-6 py-3 gold-gradient text-primary-foreground font-sans text-xs tracking-[0.12em] sm:tracking-[0.15em] uppercase active:scale-[0.97] transition-transform sm:w-auto">
               <Phone size={14} /> Call 0715855360
             </a>
-            <a href="https://wa.me/254715250625" className="flex items-center gap-2 px-6 py-3 border border-primary/30 text-gold font-sans text-xs tracking-[0.15em] uppercase hover:bg-primary/10 transition-all active:scale-[0.97]">
+            <a href="https://wa.me/254715250625" className="flex w-full justify-center items-center gap-2 px-6 py-3 border border-primary/30 text-gold font-sans text-xs tracking-[0.12em] sm:tracking-[0.15em] uppercase hover:bg-primary/10 transition-all active:scale-[0.97] sm:w-auto">
               <MessageCircle size={14} /> WhatsApp 0715250625
             </a>
           </div>
@@ -101,16 +101,16 @@ const ContactSection = () => {
               { icon: Mail, title: 'Email', lines: ['info@executivefunerals.co.ke', 'support@executivefunerals.co.ke'] },
               { icon: Clock, title: 'Hours', lines: ['24/7 Emergency Support', 'Office: Mon–Sat, 8AM–6PM'] },
             ].map(({ icon: Icon, title, lines }) => (
-              <div key={title} className="flex gap-4">
-                <div className="w-10 h-10 border border-primary/30 flex items-center justify-center shrink-0">
-                  <Icon size={18} className="text-gold" strokeWidth={1.5} />
+                <div key={title} className="flex min-w-0 gap-4">
+                  <div className="w-10 h-10 border border-primary/30 flex items-center justify-center shrink-0">
+                    <Icon size={18} className="text-gold" strokeWidth={1.5} />
+                  </div>
+                  <div className="min-w-0">
+                    <div className="font-serif text-lg text-foreground">{title}</div>
+                  {lines.map(l => <div key={l} className="font-sans text-sm text-muted-foreground break-words">{l}</div>)}
+                  </div>
                 </div>
-                <div>
-                  <div className="font-serif text-lg text-foreground">{title}</div>
-                  {lines.map(l => <div key={l} className="font-sans text-sm text-muted-foreground">{l}</div>)}
-                </div>
-              </div>
-            ))}
+              ))}
 
             {/* Service area map */}
             <div className="border border-border bg-secondary/20 overflow-hidden">

@@ -31,13 +31,13 @@ const HeroSection = () => (
       <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-transparent" />
     </div>
 
-    <div className="relative z-10 max-w-5xl mx-auto px-4 md:px-8 text-center pt-24 pb-16">
+    <div className="relative z-10 max-w-5xl mx-auto px-4 md:px-8 text-center pt-24 pb-16 min-w-0">
       {/* Ornament */}
       <div className="mb-8 opacity-0 animate-fade-in" style={{ animationDelay: '200ms', animationFillMode: 'forwards' }}>
         <div className="w-px h-16 bg-gradient-to-b from-transparent via-primary/60 to-transparent mx-auto" />
       </div>
 
-      <span className="inline-block text-gold font-sans text-xs tracking-[0.4em] uppercase mb-6 opacity-0 animate-fade-up" style={{ animationDelay: '400ms' }}>
+      <span className="inline-block max-w-full text-gold font-sans text-xs tracking-[0.24em] sm:tracking-[0.4em] uppercase mb-6 opacity-0 animate-fade-up" style={{ animationDelay: '400ms' }}>
         Premium Funeral Services
       </span>
 
@@ -52,13 +52,13 @@ const HeroSection = () => (
 
       <div className="mb-20 opacity-0 animate-fade-up" style={{ animationDelay: '1000ms' }}>
         <div className="grid grid-cols-2 gap-3 sm:hidden">
-          <a href="#contact" className="px-4 py-3 gold-gradient text-primary-foreground font-sans text-[11px] tracking-[0.14em] uppercase text-center transition-all duration-300 active:scale-[0.97]">
+          <a href="#contact" className="min-w-0 px-4 py-3 gold-gradient text-primary-foreground font-sans text-[11px] leading-tight tracking-[0.1em] uppercase text-center transition-all duration-300 active:scale-[0.97]">
             Book a Consultation
           </a>
-          <a href="#services" className="px-4 py-3 border border-primary/30 text-foreground font-sans text-[11px] tracking-[0.14em] uppercase text-center hover:bg-primary/5 transition-all duration-300 active:scale-[0.97]">
+          <a href="#services" className="min-w-0 px-4 py-3 border border-primary/30 text-foreground font-sans text-[11px] leading-tight tracking-[0.1em] uppercase text-center hover:bg-primary/5 transition-all duration-300 active:scale-[0.97]">
             Explore Services
           </a>
-          <a href={`tel:${supportPhone}`} className="col-span-2 px-4 py-3 border border-primary/30 bg-background/15 text-gold font-sans text-[11px] tracking-[0.14em] uppercase text-center backdrop-blur-sm hover:bg-primary/10 transition-all duration-300 active:scale-[0.97]">
+          <a href={`tel:${supportPhone}`} className="col-span-2 min-w-0 px-4 py-3 border border-primary/30 bg-background/15 text-gold font-sans text-[11px] leading-tight tracking-[0.1em] uppercase text-center backdrop-blur-sm hover:bg-primary/10 transition-all duration-300 active:scale-[0.97]">
             24/7 Support
           </a>
         </div>
@@ -74,11 +74,11 @@ const HeroSection = () => (
       </div>
 
       {/* Trust Indicators */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto opacity-0 animate-fade-up" style={{ animationDelay: '1200ms' }}>
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-3xl mx-auto opacity-0 animate-fade-up" style={{ animationDelay: '1200ms' }}>
         {trust.map(({ icon: Icon, label }) => (
-          <div key={label} className="flex flex-col items-center gap-3 py-4 px-3 border border-border/30 bg-background/20 backdrop-blur-sm">
+          <div key={label} className="flex min-w-0 flex-col items-center gap-3 py-4 px-3 border border-border/30 bg-background/20 backdrop-blur-sm">
             <Icon size={20} className="text-gold" strokeWidth={1.5} />
-            <span className="font-sans text-xs tracking-[0.1em] uppercase text-muted-foreground">{label}</span>
+            <span className="font-sans text-[11px] sm:text-xs tracking-[0.08em] sm:tracking-[0.1em] uppercase text-muted-foreground">{label}</span>
           </div>
         ))}
       </div>

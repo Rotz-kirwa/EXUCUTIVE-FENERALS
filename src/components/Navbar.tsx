@@ -15,15 +15,15 @@ const Navbar = () => {
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? 'bg-background/95 backdrop-blur-md border-b border-border shadow-lg shadow-black/10' : 'bg-transparent'}`}>
-      <div className="max-w-7xl mx-auto px-4 md:px-8 flex items-center justify-between h-20">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 flex items-center justify-between h-20 min-w-0 gap-4">
         {/* Logo */}
-        <a href="#home" className="flex items-center gap-2 group">
-          <div className="w-8 h-8 border border-primary/60 flex items-center justify-center">
+        <a href="#home" className="flex min-w-0 items-center gap-2 group">
+          <div className="w-8 h-8 border border-primary/60 flex items-center justify-center shrink-0">
             <span className="font-serif text-primary text-sm font-semibold">EF</span>
           </div>
-          <div className="leading-none">
+          <div className="min-w-0 leading-none">
             <span className="font-serif text-lg text-foreground tracking-wide">Executive</span>
-            <span className="block font-sans text-[10px] tracking-[0.35em] uppercase text-gold">Funerals</span>
+            <span className="block font-sans text-[10px] tracking-[0.24em] sm:tracking-[0.35em] uppercase text-gold">Funerals</span>
           </div>
         </a>
 

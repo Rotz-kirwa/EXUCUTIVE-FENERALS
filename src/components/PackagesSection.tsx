@@ -24,9 +24,9 @@ const PackagesSection = () => {
               style={{ transitionDelay: isVisible ? `${i * 100}ms` : '0ms' }}
             >
               {pkg.featured && (
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2 flex items-center gap-1.5 px-4 py-1 gold-gradient">
+                <div className="absolute -top-3 left-1/2 flex max-w-[calc(100%-1.5rem)] -translate-x-1/2 items-center justify-center gap-1.5 px-4 py-1 gold-gradient">
                   <Star size={12} className="text-primary-foreground" fill="currentColor" />
-                  <span className="font-sans text-[10px] tracking-[0.2em] uppercase text-primary-foreground font-semibold">Most Popular</span>
+                  <span className="font-sans text-[10px] tracking-[0.14em] sm:tracking-[0.2em] uppercase text-primary-foreground font-semibold text-center">Most Popular</span>
                 </div>
               )}
 

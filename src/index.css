@@ -59,18 +59,28 @@
 @layer base {
   * {
     @apply border-border;
+    box-sizing: border-box;
   }
 
   html {
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    width: 100%;
+    overflow-x: hidden;
   }
 
   body {
     @apply bg-background text-foreground font-sans;
     text-rendering: optimizeLegibility;
     overflow-wrap: break-word;
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  #root {
+    width: 100%;
+    overflow-x: hidden;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -80,6 +90,12 @@
 
   p {
     text-wrap: pretty;
+  }
+
+  img,
+  video,
+  svg {
+    max-width: 100%;
   }
 }
 

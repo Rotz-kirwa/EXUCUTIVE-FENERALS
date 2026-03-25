@@ -13,7 +13,7 @@ import FooterSection from '@/components/FooterSection';
 import WhatsAppFloat from '@/components/WhatsAppFloat';
 
 const Index = () => (
-  <>
+  <div className="overflow-x-hidden">
     <Navbar />
     <HeroSection />
     <AboutSection />
@@ -27,7 +27,7 @@ const Index = () => (
     <ContactSection />
     <FooterSection />
     <WhatsAppFloat />
-  </>
+  </div>
 );
 
 export default Index;

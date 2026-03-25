@@ -171,15 +171,15 @@ const MpesaCheckout = () => {
     <main className="relative min-h-screen overflow-hidden bg-charcoal-deep">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(201,167,92,0.12),transparent_28%),radial-gradient(circle_at_left,rgba(37,61,105,0.14),transparent_24%)]" aria-hidden="true" />
 
-      <div className="relative mx-auto max-w-5xl px-4 py-8 md:px-8 md:py-10">
+      <div className="relative mx-auto max-w-5xl px-4 py-8 md:px-8 md:py-10 min-w-0">
         <header className="mb-6 flex flex-col gap-4 rounded-[24px] border border-primary/15 bg-background/70 px-5 py-5 backdrop-blur-xl premium-shadow md:flex-row md:items-center md:justify-between md:px-7">
-          <Link to="/" className="flex items-center gap-2">
-            <div className="flex h-10 w-10 items-center justify-center border border-primary/60 bg-background/70">
+          <Link to="/" className="flex min-w-0 items-center gap-2">
+            <div className="flex h-10 w-10 items-center justify-center border border-primary/60 bg-background/70 shrink-0">
               <span className="font-serif text-base font-semibold text-primary">EF</span>
             </div>
-            <div className="leading-none">
+            <div className="min-w-0 leading-none">
               <span className="font-serif text-xl tracking-wide text-foreground">Executive</span>
-              <span className="block font-sans text-[10px] uppercase tracking-[0.35em] text-gold">Funerals</span>
+              <span className="block font-sans text-[10px] uppercase tracking-[0.24em] sm:tracking-[0.35em] text-gold">Funerals</span>
             </div>
           </Link>
 
@@ -206,25 +206,25 @@ const MpesaCheckout = () => {
 
         <div className="grid gap-6 lg:grid-cols-[0.95fr_1.05fr]">
           <section className="rounded-[28px] border border-border bg-card/80 p-6 premium-shadow backdrop-blur-md md:p-8">
-            <div className="flex items-start justify-between gap-4">
-              <div>
+            <div className="flex flex-col items-start gap-4 sm:flex-row sm:justify-between">
+              <div className="min-w-0">
                 <div className="font-sans text-[11px] uppercase tracking-[0.16em] text-gold">Selected Package</div>
                 <h2 className="mt-3 font-serif text-3xl text-foreground">{selectedPackage.name}</h2>
                 <p className="mt-3 font-sans text-sm leading-relaxed text-muted-foreground">{selectedPackage.summary}</p>
               </div>
-              <div className="rounded-full border border-primary/20 bg-primary/5 px-4 py-2 font-sans text-[11px] uppercase tracking-[0.16em] text-gold">
+              <div className="max-w-full rounded-full border border-primary/20 bg-primary/5 px-4 py-2 font-sans text-[11px] uppercase tracking-[0.12em] sm:tracking-[0.16em] text-gold text-center">
                 {selectedPackage.displayPrice}
               </div>
             </div>
 
             <div className="mt-6 space-y-4 rounded-[24px] border border-primary/10 bg-background/35 p-5">
-              <div className="flex items-center justify-between gap-4 border-b border-border/70 pb-4">
+              <div className="flex items-start justify-between gap-4 border-b border-border/70 pb-4 min-w-0">
                 <span className="font-sans text-sm text-muted-foreground">{paymentLabel}</span>
-                <span className="font-serif text-2xl text-gold">{formatKes(selectedPackage.amountKes)}</span>
+                <span className="font-serif text-2xl text-gold text-right">{formatKes(selectedPackage.amountKes)}</span>
               </div>
-              <div className="flex items-center justify-between gap-4 border-b border-border/70 pb-4">
+              <div className="flex items-start justify-between gap-4 border-b border-border/70 pb-4 min-w-0">
                 <span className="font-sans text-sm text-muted-foreground">Reference</span>
-                <span className="font-sans text-sm text-foreground">{reference}</span>
+                <span className="font-sans text-sm text-foreground break-all text-right">{reference}</span>
               </div>
               <div>
                 <div className="font-sans text-[11px] uppercase tracking-[0.16em] text-muted-foreground">Included Services</div>
@@ -279,9 +279,9 @@ const MpesaCheckout = () => {
                       phoneError ? 'border-destructive/60 focus:border-destructive/70' : 'border-primary/15 focus:border-primary/45'
                     }`}
                   />
-                  <div className="mt-2 flex items-center justify-between gap-3">
-                    <span className="font-sans text-xs text-muted-foreground">Example: 254712345678</span>
-                    <span className="font-sans text-xs text-gold">{formatKes(selectedPackage.amountKes)}</span>
+                  <div className="mt-2 flex items-start justify-between gap-3">
+                    <span className="font-sans text-xs text-muted-foreground min-w-0">Example: 254712345678</span>
+                    <span className="font-sans text-xs text-gold text-right">{formatKes(selectedPackage.amountKes)}</span>
                   </div>
                   {phoneError && (
                     <div className="mt-3 flex items-center gap-2 font-sans text-sm text-destructive">
@@ -376,14 +376,14 @@ const MpesaCheckout = () => {
               </div>
 
               <div className="mt-4 grid gap-3 sm:grid-cols-3 lg:grid-cols-1">
-                <a href={`tel:${SUPPORT_PHONE}`} className="rounded-[18px] border border-white/5 bg-background/35 px-4 py-3 font-sans text-sm text-foreground transition-colors hover:text-gold">
+                <a href={`tel:${SUPPORT_PHONE}`} className="rounded-[18px] border border-white/5 bg-background/35 px-4 py-3 font-sans text-sm text-foreground transition-colors hover:text-gold break-words">
                   {SUPPORT_PHONE}
                 </a>
-                <a href="https://wa.me/254715250625" className="inline-flex items-center gap-2 rounded-[18px] border border-white/5 bg-background/35 px-4 py-3 font-sans text-sm text-foreground transition-colors hover:text-gold">
+                <a href="https://wa.me/254715250625" className="inline-flex items-center gap-2 rounded-[18px] border border-white/5 bg-background/35 px-4 py-3 font-sans text-sm text-foreground transition-colors hover:text-gold break-words">
                   <MessageCircle size={14} />
                   {SUPPORT_WHATSAPP}
                 </a>
-                <a href={`mailto:${SUPPORT_EMAIL}`} className="rounded-[18px] border border-white/5 bg-background/35 px-4 py-3 font-sans text-sm text-foreground transition-colors hover:text-gold">
+                <a href={`mailto:${SUPPORT_EMAIL}`} className="rounded-[18px] border border-white/5 bg-background/35 px-4 py-3 font-sans text-sm text-foreground transition-colors hover:text-gold break-all">
                   {SUPPORT_EMAIL}
                 </a>
               </div>

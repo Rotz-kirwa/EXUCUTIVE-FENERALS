@@ -6,13 +6,13 @@ const FooterSection = () => (
       <div className="grid md:grid-cols-4 gap-12">
         {/* Brand */}
         <div className="md:col-span-1">
-          <div className="flex items-center gap-2 mb-4">
-            <div className="w-8 h-8 border border-primary/60 flex items-center justify-center">
+          <div className="flex min-w-0 items-center gap-2 mb-4">
+            <div className="w-8 h-8 border border-primary/60 flex items-center justify-center shrink-0">
               <span className="font-serif text-primary text-sm font-semibold">EF</span>
             </div>
-            <div className="leading-none">
+            <div className="min-w-0 leading-none">
               <span className="font-serif text-lg text-foreground">Executive</span>
-              <span className="block font-sans text-[10px] tracking-[0.35em] uppercase text-gold">Funerals</span>
+              <span className="block font-sans text-[10px] tracking-[0.24em] sm:tracking-[0.35em] uppercase text-gold">Funerals</span>
             </div>
           </div>
           <p className="font-sans text-sm text-muted-foreground leading-relaxed mt-4">
@@ -47,11 +47,11 @@ const FooterSection = () => (
         {/* Support */}
         <div>
           <h4 className="font-serif text-lg text-foreground mb-4">Support</h4>
-          <ul className="space-y-2 font-sans text-sm text-muted-foreground">
+          <ul className="space-y-2 font-sans text-sm text-muted-foreground min-w-0">
             <li>24/7 Emergency Line</li>
             <li>0715855360</li>
             <li>0715250625</li>
-            <li>info@executivefunerals.co.ke</li>
+            <li className="break-all">info@executivefunerals.co.ke</li>
             <li className="pt-2">
               <a href="#contact" className="text-gold hover:text-foreground transition-colors">Request Assistance →</a>
             </li>
