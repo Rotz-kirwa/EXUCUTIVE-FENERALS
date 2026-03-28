@@ -14,6 +14,7 @@ import casketCopperImg from '@/assets/marketplace/casket-copper.webp';
 import casketExecutiveImg from '@/assets/marketplace/casket-executive.webp';
 import casketSignatureImg from '@/assets/marketplace/casket-signature.webp';
 import floralWhiteEleganceImg from '@/assets/marketplace/floral-white-elegance.webp';
+import floralCascadeTributeImg from '@/assets/marketplace/floral-cascade-tribute.webp';
 import floralRemembranceSprayImg from '@/assets/marketplace/floral-remembrance-spray.webp';
 import floralStandingTributeImg from '@/assets/marketplace/floral-standing-tribute.webp';
 import floralSympathyBasketImg from '@/assets/marketplace/floral-sympathy-basket.webp';
@@ -69,7 +70,7 @@ const products = [
   { name: 'Executive Gold Accent Casket', cat: 'Caskets', price: 'KSh 245,000', img: casketShowcase.executive, desc: 'Premium executive-grade casket featuring gold-accented craftsmanship and a stately ceremonial look.' },
   { name: 'Signature Walnut Casket', cat: 'Caskets', price: 'KSh 195,000', img: casketShowcase.signature, desc: 'Signature walnut-finish casket with elegant panel detailing and a calm, premium ceremonial presence.' },
   { name: 'White Rose Memorial Wreath', cat: 'Florals', price: 'KSh 18,500', img: floralImg, desc: 'Elegant white rose and lily wreath arrangement for memorial tributes.' },
-  { name: 'Cascade Lily Tribute', cat: 'Florals', price: 'KSh 24,000', img: floralImg, desc: 'Cascading lily and greenery arrangement for casket display.' },
+  { name: 'Cascade Lily Tribute', cat: 'Florals', price: 'KSh 24,000', img: floralCascadeTributeImg, desc: 'Cascading lily and greenery arrangement for casket display.' },
   { name: 'White Elegance Tribute', cat: 'Florals', price: 'KSh 21,500', img: floralShowcase.whiteElegance, desc: 'Soft white sympathy arrangement designed for a calm, graceful memorial presentation.' },
   { name: 'Golden Remembrance Spray', cat: 'Florals', price: 'KSh 28,000', img: floralShowcase.remembranceSpray, desc: 'Premium standing spray with warm tones and layered blooms for a dignified farewell.' },
   { name: 'Standing Grace Wreath', cat: 'Florals', price: 'KSh 32,500', img: floralShowcase.standingTribute, desc: 'Full standing tribute wreath created to honor a life with elegance and presence.' },
@@ -96,15 +97,26 @@ const MarketplaceSection = ({ sectionId = 'marketplace' }: MarketplaceSectionPro
   const { marketplaceInitialCount, marketplaceStep } = useAdaptiveExperience();
   const [filter, setFilter] = useState('All');
   const [quickView, setQuickView] = useState<(typeof products)[number] | null>(null);
+  const [isMobile, setIsMobile] = useState(false);
   const [visibleCount, setVisibleCount] = useState(marketplaceInitialCount);
 
   const filtered = filter === 'All' ? products : products.filter(p => p.cat === filter);
-  const visibleProducts = filtered.slice(0, visibleCount);
-  const hasMoreProducts = visibleCount < filtered.length;
+  const visibleProducts = isMobile ? filtered.slice(0, visibleCount) : filtered;
+  const hasMoreProducts = isMobile && visibleCount < filtered.length;
 
   useEffect(() => {
-    setVisibleCount(Math.min(marketplaceInitialCount, filtered.length));
-  }, [filter, filtered.length, marketplaceInitialCount]);
+    const mediaQuery = window.matchMedia('(max-width: 639px)');
+
+    const syncViewport = () => setIsMobile(mediaQuery.matches);
+
+    syncViewport();
+    mediaQuery.addEventListener('change', syncViewport);
+    return () => mediaQuery.removeEventListener('change', syncViewport);
+  }, []);
+
+  useEffect(() => {
+    setVisibleCount(isMobile ? Math.min(marketplaceInitialCount, filtered.length) : filtered.length);
+  }, [filter, filtered.length, isMobile, marketplaceInitialCount]);
 
   return (
     <section id={sectionId} className="section-padding-lg bg-background">

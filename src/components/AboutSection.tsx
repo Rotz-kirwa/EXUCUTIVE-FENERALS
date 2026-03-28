@@ -1,6 +1,7 @@
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 import ResponsiveImage from '@/components/ResponsiveImage';
-import { aboutMedia } from '@/data/media';
+
+const ourStoryImage = 'https://www.dropbox.com/scl/fi/eetq758qz7inxtsobrfza/lim.jpg?rlkey=fh0gl4gytvfnjheuwlc6sd0pv&st=m2o1lmuo&raw=1';
 
 const stats = [
   { value: '2,400+', label: 'Families Served' },
@@ -20,10 +21,8 @@ const AboutSection = () => {
           <div className={`relative transition-all duration-700 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'}`}>
             <div className="relative overflow-hidden">
               <ResponsiveImage
-                alt="Executive Funerals team"
-                avif={aboutMedia.avif}
-                webp={aboutMedia.webp}
-                fallback={aboutMedia.fallback}
+                alt="Executive Funerals hearse and service team"
+                fallback={ourStoryImage}
                 className="h-[340px] w-full object-cover sm:h-[420px] md:h-[500px]"
                 sizes="(min-width: 1024px) 40vw, 100vw"
               />
@@ -42,7 +41,7 @@ const AboutSection = () => {
             </h2>
             <div className="space-y-5 text-muted-foreground font-sans text-base leading-relaxed">
               <p>
-                For over a decade, Executive Funerals has supported families in Nairobi and across Kenya with dignified, premium funeral services. We understand that losing a loved one is one of life's most profound moments, and we are committed to ensuring every farewell is handled with the utmost respect, grace, and professionalism.
+                For over a decade, Executive Funerals has supported families across Kenya with dignified, premium funeral services. We understand that losing a loved one is one of life's most profound moments, and we are committed to ensuring every farewell is handled with the utmost respect, grace, and professionalism.
               </p>
               <p>
                 From city memorials in Nairobi to upcountry burial arrangements, our dedicated team orchestrates every detail so families can focus on what matters most — remembering, honoring, and celebrating a life well lived.

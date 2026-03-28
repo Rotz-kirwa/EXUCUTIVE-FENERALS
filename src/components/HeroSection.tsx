@@ -83,7 +83,7 @@ const HeroSection = () => {
           </h1>
 
           <p className={`max-w-2xl mx-auto text-muted-foreground font-sans text-base md:text-lg leading-relaxed mb-8 ${fadeUpClass}`} style={shouldReduceMotion ? undefined : { animationDelay: '800ms' }}>
-            Executive Funerals provides compassionate, well-coordinated, and premium funeral services for families in Nairobi and across Kenya, honoring every life with dignity, beauty, and respect.
+            Executive Funerals provides compassionate, well-coordinated, and premium funeral services for families across Kenya, honoring every life with dignity, beauty, and respect.
           </p>
 
           <div className={`sm:hidden ${fadeUpClass}`} style={shouldReduceMotion ? undefined : { animationDelay: '950ms' }}>

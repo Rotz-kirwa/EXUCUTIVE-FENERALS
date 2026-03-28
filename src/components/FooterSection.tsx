@@ -1,4 +1,4 @@
-import { Heart } from 'lucide-react';
+import BrandLogo from './BrandLogo';
 
 const FooterSection = () => (
   <footer className="bg-charcoal-deep border-t border-border">
@@ -6,17 +6,11 @@ const FooterSection = () => (
       <div className="grid md:grid-cols-4 gap-12">
         {/* Brand */}
         <div className="md:col-span-1">
-          <div className="flex min-w-0 items-center gap-2 mb-4">
-            <div className="w-8 h-8 border border-primary/60 flex items-center justify-center shrink-0">
-              <span className="font-serif text-primary text-sm font-semibold">EF</span>
-            </div>
-            <div className="min-w-0 leading-none">
-              <span className="font-serif text-lg text-foreground">Executive</span>
-              <span className="block font-sans text-[10px] tracking-[0.24em] sm:tracking-[0.35em] uppercase text-gold">Funerals</span>
-            </div>
+          <div className="mb-4">
+            <BrandLogo imageClassName="h-12 w-12" />
           </div>
           <p className="font-sans text-sm text-muted-foreground leading-relaxed mt-4">
-            Honoring lives with dignity, compassion, and excellence for families in Nairobi and across Kenya.
+            Honoring lives with dignity, compassion, and excellence for families across Kenya.
           </p>
         </div>
 
@@ -64,8 +58,8 @@ const FooterSection = () => (
         <p className="font-sans text-xs text-muted-foreground">
           © {new Date().getFullYear()} Executive Funerals. All rights reserved.
         </p>
-        <p className="flex items-center gap-1.5 font-sans text-xs text-muted-foreground">
-          Made with <Heart size={12} className="text-gold" fill="currentColor" /> for families who deserve the best
+        <p className="font-sans text-xs text-muted-foreground">
+          Guiding every farewell with calm coordination and dignified care.
         </p>
       </div>
     </div>

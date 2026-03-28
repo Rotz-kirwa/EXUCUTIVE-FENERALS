@@ -13,12 +13,15 @@ import FooterSection from '@/components/FooterSection';
 import WhatsAppFloat from '@/components/WhatsAppFloat';
 import DeferredSection from '@/components/DeferredSection';
 import SectionSkeleton from '@/components/SectionSkeleton';
+import PageMetadata from '@/components/PageMetadata';
+import { homePageMetadata } from '@/lib/siteMetadata';
 
 const GallerySection = lazy(() => import('@/components/GallerySection'));
 const MarketplaceSection = lazy(() => import('@/components/MarketplaceSection'));
 
 const Index = () => (
   <div className="overflow-x-hidden">
+    <PageMetadata metadata={homePageMetadata} />
     <Navbar />
     <HeroSection />
     <HeroHighlightsSection />

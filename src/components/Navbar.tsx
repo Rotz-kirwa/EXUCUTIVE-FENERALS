@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, Phone } from 'lucide-react';
+import BrandLogo from './BrandLogo';
 
 const links = ['Home', 'About', 'Services', 'Gallery', 'Marketplace', 'Packages', 'Testimonials', 'Contact'];
 
@@ -18,13 +19,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 md:px-8 flex items-center justify-between h-20 min-w-0 gap-4">
         {/* Logo */}
         <a href="#home" className="flex min-w-0 items-center gap-2 group">
-          <div className="w-8 h-8 border border-primary/60 flex items-center justify-center shrink-0">
-            <span className="font-serif text-primary text-sm font-semibold">EF</span>
-          </div>
-          <div className="min-w-0 leading-none">
-            <span className="font-serif text-lg text-foreground tracking-wide">Executive</span>
-            <span className="block font-sans text-[10px] tracking-[0.24em] sm:tracking-[0.35em] uppercase text-gold">Funerals</span>
-          </div>
+          <BrandLogo imageClassName="h-12 w-12" />
         </a>
 
         {/* Desktop Links */}

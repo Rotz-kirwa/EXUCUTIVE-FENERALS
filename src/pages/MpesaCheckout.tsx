@@ -8,6 +8,8 @@ import {
 
 import { formatKes, funeralPackages, getFuneralPackageBySlug } from '@/data/funeralPackages';
 import { useAdaptiveExperience } from '@/providers/AdaptiveExperienceProvider';
+import PageMetadata from '@/components/PageMetadata';
+import { checkoutPageMetadata } from '@/lib/siteMetadata';
 
 type PaymentState = 'idle' | 'loading' | 'success' | 'error';
 
@@ -126,6 +128,7 @@ const MpesaCheckout = () => {
   if (!selectedPackage) {
     return (
       <main className="min-h-screen bg-charcoal-deep px-4 py-10 md:px-8">
+        <PageMetadata metadata={checkoutPageMetadata} />
         <div className="max-w-4xl mx-auto">
           <div className="rounded-[28px] border border-border bg-card/80 p-8 md:p-10 premium-shadow">
             <div className="w-12 h-12 rounded-full border border-destructive/30 bg-destructive/10 flex items-center justify-center text-destructive">
@@ -150,6 +153,13 @@ const MpesaCheckout = () => {
 
   return (
     <main className="min-h-screen bg-charcoal-deep px-4 py-8 md:px-8">
+      <PageMetadata
+        metadata={{
+          ...checkoutPageMetadata,
+          title: `${selectedPackage.name} | M-PESA Checkout | Executive Funerals`,
+          description: `Confirm ${selectedPackage.name} with secure M-PESA checkout and immediate assistance from the Executive Funerals care team.`,
+        }}
+      />
       <div className="mx-auto max-w-2xl">
         <section className="rounded-[28px] border border-primary/15 bg-[linear-gradient(145deg,rgba(14,18,29,0.96),rgba(22,33,52,0.92))] p-6 premium-shadow md:p-8">
           <Link

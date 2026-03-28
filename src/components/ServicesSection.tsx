@@ -4,15 +4,22 @@ import { serviceMedia } from '@/data/media';
 import SectionHeading from './SectionHeading';
 import { ArrowRight, ArrowDownToLine, Car, Package, Flower2, Tent, Church, Shovel, Plane, FileText } from 'lucide-react';
 
+const hearseTransportationImg = 'https://www.dropbox.com/scl/fi/v5cx11kqfts198pl10fc9/fleet.jpeg?rlkey=bjc2ecr63mhzdr54zd5pzf0w3&raw=1';
+const tentSetupImg = 'https://www.dropbox.com/scl/fi/eno5rin70gowt8m4hhbfk/tents.jpeg?rlkey=1gturrzq6bakrmiqetd6z58un&raw=1';
+const memorialServiceSetupImg = 'https://www.dropbox.com/scl/fi/vv1tqhxjzd1rznuly36s1/mss.jpeg?rlkey=7g74wjg4j8z9q6q2qadeqohz3&raw=1';
+const burialProcessCoordinationImg = 'https://www.dropbox.com/scl/fi/b7xmhfot4d9y1kpryij8k/cod.jpeg?rlkey=btl87dw6mtmy9nnqj4bgxej8z&raw=1';
+const casketLoweringDeviceImg = 'https://www.finero.eu/wp-content/uploads/2018/11/winda_pogrzebowa_frigid_zestaw_1200.jpg';
+const repatriationImg = 'https://www.dropbox.com/scl/fi/3mrrudnkzhyzm8vhibdlx/repatriation.jpeg?rlkey=8gcgapkfnam9awf0as7u78u9e&raw=1';
+
 const services = [
-  { icon: Car, title: 'Hearse Transportation', desc: 'Premium fleet of luxury hearses providing dignified transportation with professional chauffeurs.', media: serviceMedia.hearse, sizes: '(min-width: 1024px) 30vw, (min-width: 768px) 45vw, 100vw' },
+  { icon: Car, title: 'Hearse Transportation', desc: 'Premium fleet of luxury hearses providing dignified transportation with professional chauffeurs.', media: { fallback: hearseTransportationImg }, sizes: '(min-width: 1024px) 30vw, (min-width: 768px) 45vw, 100vw' },
   { icon: Package, title: 'Casket & Coffin Selection', desc: 'Curated collection of premium caskets and coffins in various styles, materials, and finishes.', media: serviceMedia.casket, sizes: '(min-width: 1024px) 30vw, (min-width: 768px) 45vw, 100vw' },
   { icon: Flower2, title: 'Floral Arrangements', desc: 'Bespoke funeral floral tributes designed to honor and celebrate the life of your loved one.', media: serviceMedia.floral, sizes: '(min-width: 1024px) 30vw, (min-width: 768px) 45vw, 100vw' },
-  { icon: Tent, title: 'Tent & Chair Setup', desc: 'Elegant outdoor ceremony setups with premium tenting, seating, and decor for graveside services.', media: serviceMedia.tent, sizes: '(min-width: 1024px) 30vw, (min-width: 768px) 45vw, 100vw' },
-  { icon: Church, title: 'Memorial Service Setup', desc: 'Beautiful memorial settings with candles, tributes, photo displays, and dignified ambiance.', media: serviceMedia.memorial, sizes: '(min-width: 1024px) 30vw, (min-width: 768px) 45vw, 100vw' },
-  { icon: Shovel, title: 'Burial Process Coordination', desc: 'Seamless coordination of burial proceedings with cemetery liaisons and all required logistics.', media: serviceMedia.burial, sizes: '(min-width: 1024px) 30vw, (min-width: 768px) 45vw, 100vw' },
-  { icon: ArrowDownToLine, title: 'Casket Lowering Device', desc: 'Professional graveside casket lowering equipment for a smooth, dignified, and secure final committal service.', media: serviceMedia.burial, sizes: '(min-width: 1024px) 30vw, (min-width: 768px) 45vw, 100vw' },
-  { icon: Plane, title: 'Repatriation Assistance', desc: 'International and domestic transportation of remains with full documentation and compliance support.', media: serviceMedia.hearse, sizes: '(min-width: 1024px) 30vw, (min-width: 768px) 45vw, 100vw' },
+  { icon: Tent, title: 'Tent & Chair Setup', desc: 'Elegant outdoor ceremony setups with premium tenting, seating, and decor for graveside services.', media: { fallback: tentSetupImg }, sizes: '(min-width: 1024px) 30vw, (min-width: 768px) 45vw, 100vw' },
+  { icon: Church, title: 'Memorial Service Setup', desc: 'Beautiful memorial settings with candles, tributes, photo displays, and dignified ambiance.', media: { fallback: memorialServiceSetupImg }, sizes: '(min-width: 1024px) 30vw, (min-width: 768px) 45vw, 100vw' },
+  { icon: Shovel, title: 'Burial Process Coordination', desc: 'Seamless coordination of burial proceedings with cemetery liaisons and all required logistics.', media: { fallback: burialProcessCoordinationImg }, sizes: '(min-width: 1024px) 30vw, (min-width: 768px) 45vw, 100vw' },
+  { icon: ArrowDownToLine, title: 'Casket Lowering Device', desc: 'Professional graveside casket lowering equipment for a smooth, dignified, and secure final committal service.', media: { fallback: casketLoweringDeviceImg }, sizes: '(min-width: 1024px) 30vw, (min-width: 768px) 45vw, 100vw' },
+  { icon: Plane, title: 'Repatriation Assistance', desc: 'International and domestic transportation of remains with full documentation and compliance support.', media: { fallback: repatriationImg }, sizes: '(min-width: 1024px) 30vw, (min-width: 768px) 45vw, 100vw' },
   { icon: FileText, title: 'Custom Tribute Programs', desc: 'Professionally designed tribute programs, memorial booklets, and ceremony stationery.', media: serviceMedia.tributePrograms, sizes: '(min-width: 1024px) 30vw, (min-width: 768px) 45vw, 100vw' },
 ];
 

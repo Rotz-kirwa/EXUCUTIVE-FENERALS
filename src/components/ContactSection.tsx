@@ -85,7 +85,7 @@ const ContactSection = () => {
         {/* Emergency Banner */}
           <div className={`mx-auto mt-10 max-w-3xl border border-primary/30 bg-primary/5 p-5 text-center transition-all duration-700 sm:mt-12 sm:p-6 ${isVisible ? 'opacity-100' : 'opacity-0'}`} ref={ref}>
             <div className="font-serif text-lg text-gold mb-2">Urgent Funeral Assistance?</div>
-            <p className="font-sans text-sm text-muted-foreground mb-4">Our emergency team is available around the clock for immediate support in Nairobi and across Kenya.</p>
+            <p className="font-sans text-sm text-muted-foreground mb-4">Our emergency team is available around the clock for immediate support across Kenya.</p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
             <a href="tel:0715855360" className="flex w-full justify-center items-center gap-2 px-6 py-3 gold-gradient text-primary-foreground font-sans text-xs tracking-[0.12em] sm:tracking-[0.15em] uppercase active:scale-[0.97] transition-transform sm:w-auto">
               <Phone size={14} /> Call 0715855360
