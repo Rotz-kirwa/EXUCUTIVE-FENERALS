@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState, type ReactNode } from 'react';
 
+import { useAdaptiveExperience } from '@/providers/AdaptiveExperienceProvider';
+
 interface DeferredSectionProps {
   children: ReactNode;
   fallback?: ReactNode;
@@ -13,6 +15,8 @@ const DeferredSection = ({
 }: DeferredSectionProps) => {
   const ref = useRef<HTMLDivElement>(null);
   const [shouldRender, setShouldRender] = useState(false);
+  const { deferredRootMargin } = useAdaptiveExperience();
+  const effectiveRootMargin = rootMargin ?? deferredRootMargin;
 
   useEffect(() => {
     const node = ref.current;
@@ -27,12 +31,12 @@ const DeferredSection = ({
           observer.disconnect();
         }
       },
-      { rootMargin }
+      { rootMargin: effectiveRootMargin }
     );
 
     observer.observe(node);
     return () => observer.disconnect();
-  }, [rootMargin, shouldRender]);
+  }, [effectiveRootMargin, shouldRender]);
 
   return <div ref={ref}>{shouldRender ? children : fallback}</div>;
 };

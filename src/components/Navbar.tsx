@@ -9,7 +9,7 @@ const Navbar = () => {
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60);
-    window.addEventListener('scroll', onScroll);
+    window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
@@ -43,7 +43,7 @@ const Navbar = () => {
         </a>
 
         {/* Mobile Toggle */}
-        <button onClick={() => setOpen(!open)} className="lg:hidden text-foreground p-2 active:scale-95 transition-transform">
+        <button type="button" aria-label={open ? 'Close navigation menu' : 'Open navigation menu'} onClick={() => setOpen(!open)} className="lg:hidden text-foreground p-2 active:scale-95 transition-transform">
           {open ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>

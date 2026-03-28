@@ -12,6 +12,7 @@ import ContactSection from '@/components/ContactSection';
 import FooterSection from '@/components/FooterSection';
 import WhatsAppFloat from '@/components/WhatsAppFloat';
 import DeferredSection from '@/components/DeferredSection';
+import SectionSkeleton from '@/components/SectionSkeleton';
 
 const GallerySection = lazy(() => import('@/components/GallerySection'));
 const MarketplaceSection = lazy(() => import('@/components/MarketplaceSection'));
@@ -30,17 +31,17 @@ const Index = () => (
     <div className="content-auto">
       <WhyChooseSection />
     </div>
-    <DeferredSection>
+    <DeferredSection fallback={<SectionSkeleton sectionId="gallery" title="Gallery" cardCount={4} />}>
       <div className="content-auto">
-        <Suspense fallback={<div className="h-px" aria-hidden="true" />}>
-          <GallerySection />
+        <Suspense fallback={<SectionSkeleton sectionId="gallery" title="Gallery" cardCount={4} />}>
+          <GallerySection sectionId="gallery" />
         </Suspense>
       </div>
     </DeferredSection>
-    <DeferredSection>
+    <DeferredSection fallback={<SectionSkeleton sectionId="marketplace" title="Marketplace" cardCount={3} />}>
       <div className="content-auto">
-        <Suspense fallback={<div className="h-px" aria-hidden="true" />}>
-          <MarketplaceSection />
+        <Suspense fallback={<SectionSkeleton sectionId="marketplace" title="Marketplace" cardCount={3} />}>
+          <MarketplaceSection sectionId="marketplace" />
         </Suspense>
       </div>
     </DeferredSection>

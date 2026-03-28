@@ -1,5 +1,6 @@
-import { useEffect, useState } from 'react';
+import { startTransition, useEffect, useState } from 'react';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
+import { useAdaptiveExperience } from '@/providers/AdaptiveExperienceProvider';
 import SectionHeading from './SectionHeading';
 import { ShoppingBag, X, Eye } from 'lucide-react';
 
@@ -60,9 +61,6 @@ const memorialShowcase = {
   tributeFrame: memorialTributeFrameImg,
 };
 
-const MOBILE_INITIAL_PRODUCTS = 6;
-const MOBILE_LOAD_STEP = 6;
-
 const products = [
   { name: 'Heritage Mahogany Casket', cat: 'Caskets', price: 'KSh 135,000', img: casketShowcase.heritage, desc: 'Handcrafted mahogany casket with satin interior lining and polished heritage detailing.' },
   { name: 'Premium Ebony Casket', cat: 'Caskets', price: 'KSh 185,000', img: casketShowcase.ebony, desc: 'Luxurious ebony-finish casket with plush velvet lining and premium chrome fittings.' },
@@ -89,33 +87,27 @@ const products = [
   { name: 'Professional Casket Lowering Device', cat: 'Burial Equipment', price: 'Request Quote', img: equipmentShowcase.loweringDevice, desc: 'Professional graveside lowering device engineered for a smooth, secure, and dignified final committal service.' },
 ];
 
-const MarketplaceSection = () => {
+interface MarketplaceSectionProps {
+  sectionId?: string;
+}
+
+const MarketplaceSection = ({ sectionId = 'marketplace' }: MarketplaceSectionProps) => {
   const { ref, isVisible } = useScrollReveal();
+  const { marketplaceInitialCount, marketplaceStep } = useAdaptiveExperience();
   const [filter, setFilter] = useState('All');
   const [quickView, setQuickView] = useState<(typeof products)[number] | null>(null);
-  const [isMobile, setIsMobile] = useState(false);
-  const [visibleCount, setVisibleCount] = useState(products.length);
+  const [visibleCount, setVisibleCount] = useState(marketplaceInitialCount);
 
   const filtered = filter === 'All' ? products : products.filter(p => p.cat === filter);
-  const visibleProducts = isMobile ? filtered.slice(0, visibleCount) : filtered;
-  const hasMoreProducts = isMobile && visibleCount < filtered.length;
+  const visibleProducts = filtered.slice(0, visibleCount);
+  const hasMoreProducts = visibleCount < filtered.length;
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia('(max-width: 639px)');
-
-    const syncViewport = () => setIsMobile(mediaQuery.matches);
-
-    syncViewport();
-    mediaQuery.addEventListener('change', syncViewport);
-    return () => mediaQuery.removeEventListener('change', syncViewport);
-  }, []);
-
-  useEffect(() => {
-    setVisibleCount(isMobile ? Math.min(MOBILE_INITIAL_PRODUCTS, filtered.length) : filtered.length);
-  }, [filter, filtered.length, isMobile]);
+    setVisibleCount(Math.min(marketplaceInitialCount, filtered.length));
+  }, [filter, filtered.length, marketplaceInitialCount]);
 
   return (
-    <section id="marketplace" className="section-padding-lg bg-background">
+    <section id={sectionId} className="section-padding-lg bg-background">
       <div className="max-w-7xl mx-auto">
         <SectionHeading
           label="Marketplace"
@@ -128,7 +120,8 @@ const MarketplaceSection = () => {
           {categories.map(cat => (
             <button
               key={cat}
-              onClick={() => setFilter(cat)}
+              type="button"
+              onClick={() => startTransition(() => setFilter(cat))}
               className={`px-4 py-2 font-sans text-[11px] tracking-[0.12em] uppercase border transition-all duration-300 active:scale-[0.97] sm:px-5 sm:text-xs sm:tracking-[0.15em] ${filter === cat ? 'border-primary bg-primary/10 text-gold' : 'border-border text-muted-foreground hover:border-primary/30 hover:text-foreground'}`}
             >
               {cat}
@@ -153,7 +146,7 @@ const MarketplaceSection = () => {
                   decoding="async"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-card/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
-                  <button onClick={() => setQuickView(p)} className="p-3 border border-primary/50 bg-background/80 backdrop-blur-sm text-gold hover:bg-primary/20 transition-colors active:scale-95">
+                  <button type="button" aria-label={`Quick view ${p.name}`} onClick={() => setQuickView(p)} className="p-3 border border-primary/50 bg-background/80 backdrop-blur-sm text-gold hover:bg-primary/20 transition-colors active:scale-95">
                     <Eye size={18} />
                   </button>
                 </div>
@@ -164,7 +157,7 @@ const MarketplaceSection = () => {
                 <p className="font-sans text-sm text-muted-foreground leading-relaxed mb-4">{p.desc}</p>
                 <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:justify-between">
                   <span className="font-serif text-xl text-gold">{p.price}</span>
-                  <button className="flex items-center gap-2 px-4 py-2 border border-primary/30 text-gold font-sans text-xs tracking-[0.1em] uppercase hover:bg-primary/10 transition-all active:scale-[0.97]">
+                  <button type="button" onClick={() => setQuickView(p)} className="flex items-center gap-2 px-4 py-2 border border-primary/30 text-gold font-sans text-xs tracking-[0.1em] uppercase hover:bg-primary/10 transition-all active:scale-[0.97]">
                     <ShoppingBag size={14} />
                     {p.price === 'Request Quote' ? 'Enquire' : 'Add'}
                   </button>
@@ -175,9 +168,10 @@ const MarketplaceSection = () => {
         </div>
 
         {hasMoreProducts && (
-          <div className="mt-6 flex justify-center sm:hidden">
+          <div className="mt-6 flex justify-center">
             <button
-              onClick={() => setVisibleCount(current => Math.min(current + MOBILE_LOAD_STEP, filtered.length))}
+              type="button"
+              onClick={() => setVisibleCount(current => Math.min(current + marketplaceStep, filtered.length))}
               className="px-5 py-3 border border-primary/30 text-gold font-sans text-[11px] tracking-[0.14em] uppercase transition-all duration-300 hover:bg-primary/10 active:scale-[0.97]"
             >
               Load More Products
@@ -192,7 +186,7 @@ const MarketplaceSection = () => {
           <div className="bg-card border border-border max-w-2xl w-full max-h-[90vh] overflow-auto animate-scale-up" onClick={e => e.stopPropagation()}>
             <div className="relative">
               <img src={quickView.img} alt={quickView.name} className="w-full h-64 md:h-80 object-cover" />
-              <button onClick={() => setQuickView(null)} className="absolute top-4 right-4 p-2 bg-background/80 text-foreground hover:text-gold transition-colors">
+              <button aria-label="Close quick view" type="button" onClick={() => setQuickView(null)} className="absolute top-4 right-4 p-2 bg-background/80 text-foreground hover:text-gold transition-colors">
                 <X size={20} />
               </button>
             </div>

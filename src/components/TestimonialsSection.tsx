@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
+import { useAdaptiveExperience } from '@/providers/AdaptiveExperienceProvider';
 import SectionHeading from './SectionHeading';
 import { Star, ChevronLeft, ChevronRight, Quote } from 'lucide-react';
 
@@ -12,12 +13,17 @@ const testimonials = [
 
 const TestimonialsSection = () => {
   const { ref, isVisible } = useScrollReveal();
+  const { shouldReduceMotion } = useAdaptiveExperience();
   const [current, setCurrent] = useState(0);
 
   useEffect(() => {
+    if (shouldReduceMotion) {
+      return;
+    }
+
     const timer = setInterval(() => setCurrent(c => (c + 1) % testimonials.length), 6000);
     return () => clearInterval(timer);
-  }, []);
+  }, [shouldReduceMotion]);
 
   const t = testimonials[current];
 

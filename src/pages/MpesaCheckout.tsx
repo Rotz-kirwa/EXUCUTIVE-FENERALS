@@ -7,6 +7,7 @@ import {
 } from 'lucide-react';
 
 import { formatKes, funeralPackages, getFuneralPackageBySlug } from '@/data/funeralPackages';
+import { useAdaptiveExperience } from '@/providers/AdaptiveExperienceProvider';
 
 type PaymentState = 'idle' | 'loading' | 'success' | 'error';
 
@@ -38,6 +39,7 @@ const MpesaCheckout = () => {
   const state = location.state as { packageSlug?: string } | null;
   const selectedSlug = state?.packageSlug ?? searchParams.get('package') ?? funeralPackages[0].slug;
   const selectedPackage = getFuneralPackageBySlug(selectedSlug);
+  const { online } = useAdaptiveExperience();
 
   const [phone, setPhone] = useState('');
   const [phoneError, setPhoneError] = useState('');
@@ -87,6 +89,12 @@ const MpesaCheckout = () => {
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
+
+    if (!online) {
+      setPaymentState('error');
+      setStatusMessage('A live connection is required to send an M-PESA STK push. Please reconnect and try again, or contact support for immediate help.');
+      return;
+    }
 
     const normalizedPhone = normalizeMpesaPhone(phone);
 
@@ -157,6 +165,12 @@ const MpesaCheckout = () => {
           <p className="mt-3 font-sans text-sm leading-relaxed text-muted-foreground">
             Use your active Safaricom number. The amount is fixed to your selected package.
           </p>
+
+          {!online && (
+            <div className="mt-5 rounded-[20px] border border-destructive/30 bg-destructive/10 px-4 py-3 font-sans text-sm text-foreground">
+              Your device appears to be offline. The page will stay readable, but sending an STK push requires a live connection.
+            </div>
+          )}
 
           <div className="mt-6 rounded-[22px] border border-primary/10 bg-background/35 p-5">
             <div className="font-sans text-[11px] uppercase tracking-[0.15em] text-muted-foreground">Selected Package</div>

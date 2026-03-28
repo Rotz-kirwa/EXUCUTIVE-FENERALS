@@ -1,6 +1,6 @@
 import { useScrollReveal } from '@/hooks/useScrollReveal';
-
-const aboutImg = 'https://www.dropbox.com/scl/fi/0wnchpahndltn5msxbr2w/mar.jpeg?rlkey=9nrsh6mpd9xhk53acjlt2av62&st=3xnydyl2&raw=1';
+import ResponsiveImage from '@/components/ResponsiveImage';
+import { aboutMedia } from '@/data/media';
 
 const stats = [
   { value: '2,400+', label: 'Families Served' },
@@ -19,12 +19,13 @@ const AboutSection = () => {
           {/* Image */}
           <div className={`relative transition-all duration-700 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'}`}>
             <div className="relative overflow-hidden">
-              <img
-                src={aboutImg}
+              <ResponsiveImage
                 alt="Executive Funerals team"
+                avif={aboutMedia.avif}
+                webp={aboutMedia.webp}
+                fallback={aboutMedia.fallback}
                 className="h-[340px] w-full object-cover sm:h-[420px] md:h-[500px]"
-                loading="lazy"
-                decoding="async"
+                sizes="(min-width: 1024px) 40vw, 100vw"
               />
               <div className="absolute inset-0 border border-primary/10" />
             </div>
